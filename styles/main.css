@@ -767,6 +767,7 @@ main {
 .privacy a {
   margin: 30px 0px 10px 0px;
   display: block;
+  text-decoration: underline;
 }
 
 .field .btn {
@@ -776,6 +777,12 @@ main {
   padding: 10px 95px;
   border-radius: 3px;
   cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+
+.field .btn:hover {
+  background: var(--primary-color);
+  color: #eee;
 }
 
 /* Media query for the tablets; */
