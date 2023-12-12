@@ -745,9 +745,13 @@ main {
 .field .emailInfo {
   border-left: 4px solid var(--primary-color);
   padding-left: 10px;
-  width: 60%;
+  width: 90%;
   font-family: Quicksand;
   font-size: 18px;
+}
+
+.field .emailDiv {
+  align-items: flex-end;
 }
 
 .privacy > div {
@@ -772,4 +776,54 @@ main {
   padding: 10px 95px;
   border-radius: 3px;
   cursor: pointer;
+}
+
+/* Media query for the tablets; */
+@media screen and (max-width: 840px) {
+  .field .emailInfo {
+    width: 100% !important;
+    font-size: 14px;
+  }
+
+  .field label {
+    height: max-content;
+  }
+
+  .field .emailDiv {
+    align-items: center;
+  }
+
+  .field .btn {
+    width: 100%;
+  }
+}
+
+/* Media query for the mobile */
+@media screen and (max-width: 760px) {
+  form > div {
+    display: block !important;
+  }
+
+  form > div > div {
+    margin-top: 20px;
+  }
+
+  main {
+    padding: 0px;
+    width: 80%;
+    margin: 30px auto;
+  }
+
+  .field .w-50 {
+    width: 100% !important;
+  }
+
+  .field .emailInfo {
+    width: 100% !important;
+    margin: 20px 0px;
+  }
+
+  .field label {
+    width: max-content;
+  }
 }
