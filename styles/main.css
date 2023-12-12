@@ -227,7 +227,13 @@ body {
   color: var(--primary-color);
 }
 
+/* Padding classes */
+.p-0 {
+  padding: 0px;
+}
+
 /*  Margin Classes */
+
 .mt-1 {
   margin-top: 10px;
 }
@@ -783,6 +789,27 @@ main {
 .field .btn:hover {
   background: var(--primary-color);
   color: #eee;
+}
+
+/* For the privacy checkbox; */
+
+#privacyCheckboxLabel {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--primary-color);
+  border-radius: 3px;
+  margin: 0;
+}
+
+#privacyCheckboxLabel:hover {
+  cursor: pointer;
+}
+#privacyCheckBox {
+  display: none;
+}
+
+#privacyCheckboxLabel.active {
+  background: var(--primary-color);
 }
 
 /* Media query for the tablets; */

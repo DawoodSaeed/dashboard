@@ -894,7 +894,10 @@
                 </div>
               </div>
               <div class="w-50">
-                <label for="Title ">Title</label>
+                <label for="salution "
+                  >Title
+                  <span class="requiredField" style="opacity: 0">*</span></label
+                >
                 <input type="text" class="form-control w-100" />
               </div>
             </div>
@@ -936,6 +939,7 @@
 
             <div class="mt-1 privacy">
               <div>
+                <label for="privacyCheckBox" id="privacyCheckboxLabel"></label>
                 <input type="checkbox" name="privacy" id="privacyCheckBox" />
                 <label for="privacy">I accept the private policy</label>
               </div>
@@ -987,6 +991,29 @@
           //   After clicking close the dropdownmenu
           toggleClass(dropdownMenu, "field_dropdown--menuActive");
         });
+      });
+
+      // For the privacy checkbox;
+      const privacyCheckBoxLabel = document.getElementById(
+        "privacyCheckboxLabel"
+      );
+      const privacyCheckBox = document.getElementById("privacyCheckBox");
+
+      // For changing the background of the label
+      privacyCheckBoxLabel.addEventListener("click", function () {
+        toggleClass(this, "active");
+        // Check the state of the checkbox;
+      });
+
+      // TGo detect the chnage in orignal checkbox; and rhe store in it label;
+      privacyCheckBox.addEventListener("change", function () {
+        if (this.checked) {
+          localStorage.setItem("privacy", true);
+          console.log("Saved in the Storage");
+        } else {
+          localStorage.removeItem("privacy");
+          console.log("Removed from the Storage");
+        }
       });
     </script>
   </body>
