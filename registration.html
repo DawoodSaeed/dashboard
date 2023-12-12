@@ -962,15 +962,18 @@
           elem.classList.add(className);
         }
       };
+      salutionInput.addEventListener("click", function () {
+        toggleClass(dropdownMenu, "field_dropdown--menuActive");
+      });
       plus.addEventListener("click", function () {
-        console.log(dropdownMenu);
         toggleClass(dropdownMenu, "field_dropdown--menuActive");
       });
 
       document.body.addEventListener("click", function (event) {
         if (
           !dropdownMenu.contains(event.target) &&
-          !plus.contains(event.target)
+          !plus.contains(event.target) &&
+          !salutionInput.contains(event.target)
         ) {
           // Click occurred outside the dropdown and the 'plus' button
           dropdownMenu.classList.remove("field_dropdown--menuActive");
