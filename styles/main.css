@@ -207,6 +207,39 @@ body {
 
 /* Utility classes */
 
+/* Title */
+
+.title {
+  font-size: 19px;
+  position: relative;
+  margin-left: 16px;
+}
+
+.title::before {
+  content: "";
+  width: 4px;
+  height: 180%;
+  background-color: var(--primary-color);
+  position: absolute;
+  top: -9px;
+  left: -15px;
+}
+
+.btn {
+  background-color: transparent;
+  border: 1px solid #ccc;
+  font: inherit;
+  padding: 10px 95px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+
+.btn:hover {
+  background: var(--primary-color);
+  color: #eee;
+}
+
 .border-bottom {
   border-bottom: 1px solid var(--border-color);
 }
@@ -327,6 +360,26 @@ body {
 
 .w-100 {
   width: 100%;
+}
+
+.font-weight-400 {
+  font-weight: 400;
+}
+
+.font-weight-500 {
+  font-weight: 500;
+}
+
+.font-weight-600 {
+  font-weight: 600;
+}
+
+.font-weight-bold {
+  font-weight: bold;
+}
+
+.font-weight-300 {
+  font-weight: 300;
 }
 
 .image-size {
@@ -777,21 +830,6 @@ main {
   color: var(--primary-color);
 }
 
-.btn {
-  background-color: transparent;
-  border: 1px solid #ccc;
-  font: inherit;
-  padding: 10px 95px;
-  border-radius: 3px;
-  cursor: pointer;
-  transition: all 0.4s ease-in-out;
-}
-
-.btn:hover {
-  background: var(--primary-color);
-  color: #eee;
-}
-
 /* For the privacy checkbox; */
 
 #privacyCheckboxLabel {
@@ -813,24 +851,40 @@ main {
   background: var(--primary-color);
 }
 
-/* Title */
-
-.title {
-  font-size: 19px;
-  position: relative;
-  margin-left: 16px;
+/* For the login form */
+.loginForm {
+  width: 500px;
+  margin: auto;
+  color: #7c7c7c;
 }
 
-.title::before {
-  content: "";
-  width: 4px;
-  height: 40px;
-  background-color: var(--primary-color);
-  position: absolute;
-  top: -9px;
-  left: -15px;
+.loginForm .login_title {
+  width: max-content;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+  font-weight: bold;
+  font-size: 18px;
+  color: #4e4c4c;
 }
 
+.loginForm .form-control {
+  display: block;
+  width: 100%;
+  font: inherit;
+  padding: 15px;
+  margin-top: 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+
+.loginForm .error_message {
+  margin: 20px 0px;
+}
+
+.loginForm .forget_password {
+  align-items: center;
+  justify-content: space-between;
+}
 /* Media query for the tablets; */
 @media screen and (max-width: 840px) {
   .field .emailInfo {
@@ -846,7 +900,7 @@ main {
     align-items: center;
   }
 
-  .field .btn {
+  .btn {
     width: 100%;
   }
 }
