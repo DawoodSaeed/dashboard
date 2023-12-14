@@ -926,6 +926,22 @@ main {
   .btn {
     width: 100%;
   }
+
+  .formContainer {
+    flex-direction: column;
+  }
+
+  .formContainer > div {
+    width: 100%;
+  }
+
+  .formContainer > div:last-child {
+    margin-top: 20px;
+  }
+
+  .formContainer > div:last-child .btn {
+    width: 50%;
+  }
 }
 
 /* Media query for the mobile */
