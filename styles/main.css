@@ -914,8 +914,38 @@ main {
   text-align: center;
 }
 
+/* For the new password page */
+
+.formContainer {
+  gap: 30px;
+  align-items: center;
+}
+#newPasswordPage .loginForm {
+  margin: 0px;
+  width: 50%;
+}
+
+#newPasswordPage form {
+  gap: 20px;
+}
+#newPasswordPage .loginForm > form > div {
+  gap: 10px;
+  width: 100%;
+}
+
+#newPasswordPage label {
+  color: var(--primary-color);
+}
+
+#newPasswordPage .form-control {
+  width: 100%;
+}
+
+#newPasswordPage .loginForm .btn {
+  display: none;
+}
 /* Media query for the tablets; */
-@media screen and (max-width: 840px) {
+@media screen and (max-width: 990px) {
   .field .emailInfo {
     width: 100% !important;
     font-size: 14px;
@@ -949,8 +979,25 @@ main {
     width: 50%;
   }
 
-  #email_send_page .forget_password--text{
+  #email_send_page .forget_password--text {
     width: 100%;
+  }
+
+  #newPasswordPage form {
+    gap: 0px;
+    flex-direction: column;
+  }
+
+  #newPasswordPage .loginForm {
+    width: 100%;
+  }
+
+  #newPasswordPage .loginForm .btn {
+    display: inherit;
+  }
+
+  #newPasswordPage .forget_password--text .btn {
+    display: none;
   }
 }
 
