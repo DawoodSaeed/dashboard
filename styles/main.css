@@ -875,6 +875,12 @@ main {
   margin-top: 15px;
   border: 1px solid var(--border-color);
   border-radius: 4px;
+  transition: all 0.4s ease;
+}
+
+.form-control:focus {
+  outline: none;
+  border: 1px solid teal;
 }
 
 .loginForm .error_message {
@@ -941,6 +947,10 @@ main {
 
   .formContainer > div:last-child .btn {
     width: 50%;
+  }
+
+  #email_send_page .forget_password--text{
+    width: 100%;
   }
 }
 
