@@ -885,6 +885,29 @@ main {
   align-items: center;
   justify-content: space-between;
 }
+
+/* Forget Password Screen */
+.forget_password--text {
+  width: 50%;
+}
+
+.forget_password--text > p {
+  margin: 15px 0px;
+}
+
+.text-decoration {
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.loginForm hr {
+  margin: 20px 0px;
+}
+
+.forget_password--consultText {
+  text-align: center;
+}
+
 /* Media query for the tablets; */
 @media screen and (max-width: 840px) {
   .field .emailInfo {
