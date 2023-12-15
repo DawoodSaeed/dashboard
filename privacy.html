@@ -920,7 +920,8 @@
 
       if (localStorage.getItem("privacy")) {
         privacyCheckBox.checked = true;
-        toggleClass(privacyCheckBox, "active");
+        toggleClass(privacyCheckBoxLabel, "active");
+        console.log("Privacy already set");
       }
 
       // For changing the background of the label
