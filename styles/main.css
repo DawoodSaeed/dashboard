@@ -829,6 +829,7 @@ main {
   display: block;
   text-decoration: underline;
   color: var(--primary-color);
+  width: max-content;
 }
 
 /* For the privacy checkbox; */
