@@ -891,7 +891,7 @@
 
         <div class="field d-flex" style="margin: 20px 0px">
           <label for="privacyCheckBox" id="privacyCheckboxLabel"></label>
-          <input type="checkbox" name="privacy" id="privacyCheckBox" checked />
+          <input type="checkbox" name="privacy" id="privacyCheckBox" />
           <label for="privacy" class="ml-1">I accept the private policy</label>
         </div>
 
@@ -918,9 +918,9 @@
 
       //   check if the checkbox is already checked;
 
-      if (privacyCheckBox.checked) {
-        console.log("The privacy policy is already checked");
-        toggleClass(privacyCheckBoxLabel, "active");
+      if (localStorage.getItem("privacy")) {
+        privacyCheckBox.checked = true;
+        toggleClass(privacyCheckBox, "active");
       }
 
       // For changing the background of the label
