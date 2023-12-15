@@ -748,6 +748,7 @@ main {
   border: none;
   border-bottom: 1px solid rgb(158, 158, 158);
   font: inherit;
+  transition: all 0.4s ease;
 }
 
 .field .form-control:focus {
@@ -881,6 +882,9 @@ main {
 .form-control:focus {
   outline: none;
   border: 1px solid teal;
+  border-top: none;
+  border-left: none;
+  border-right: none;
 }
 
 .loginForm .error_message {
