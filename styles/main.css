@@ -1205,4 +1205,13 @@ main {
   .internalMenuOverlay .navigation_btns button {
     width: 100%;
   }
+
+  main {
+    width: 100%;
+    margin: 30px;
+  }
+
+  .loginForm {
+    width: 100%;
+  }
 }
