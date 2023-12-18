@@ -790,7 +790,7 @@ main {
   bottom: 10px;
   right: 20px;
   font-size: 19px;
-  color: var(--primary-color);
+  color: gray;
   cursor: pointer;
 }
 
