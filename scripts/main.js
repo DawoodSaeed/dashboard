@@ -314,3 +314,21 @@ if (dropdownMain) {
 if (dropdownFull) {
   dropdownTogglingFn(dropdownFull, true);
 }
+
+// For the time;
+
+// Get the current date
+const currentDate = new Date();
+
+// Format the date as "dd.mm.yyyy"
+const formattedDate = `${padNumber(currentDate.getDate())}.${padNumber(
+  currentDate.getMonth() + 1
+)}.${currentDate.getFullYear()}.`;
+
+// Display or use the formatted date as needed
+console.log(formattedDate);
+
+// Function to pad a number with leading zero if needed
+function padNumber(num) {
+  return num.toString().padStart(2, "0");
+}

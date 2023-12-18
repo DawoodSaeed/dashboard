@@ -892,7 +892,9 @@
         <div class="field d-flex" style="margin: 20px 0px">
           <label for="privacyCheckBox" id="privacyCheckboxLabel"></label>
           <input type="checkbox" name="privacy" id="privacyCheckBox" />
-          <label for="privacy" class="ml-1">I accept the private policy</label>
+          <label for="privacy" class="ml-1" id="privacyStatement"
+            >I accept the private policy</label
+          >
         </div>
 
         <div>
@@ -902,6 +904,7 @@
     </div>
 
     <script>
+      const privacyStatement = document.getElementById("privacyStatement");
       //   helper method for the class toggling
       const toggleClass = function (elem, className) {
         if (elem.classList.contains(className)) {
@@ -918,8 +921,11 @@
 
       //   check if the checkbox is already checked;
 
-      if (localStorage.getItem("privacy")) {
+      if (localStorage.getItem("privacy") && localStorage.getItem("time")) {
         privacyCheckBox.checked = true;
+        privacyStatement.textContent = `You agreed to our privacy policy on ${localStorage.getItem(
+          "time"
+        )}`;
         toggleClass(privacyCheckBoxLabel, "active");
         console.log("Privacy already set");
       }
@@ -933,13 +939,31 @@
       // TGo detect the chnage in orignal checkbox; and rhe store in it label;
       privacyCheckBox.addEventListener("change", function () {
         if (this.checked) {
+          const currentDate = new Date();
+
+          // Format the date as "dd.mm.yyyy"
+          const formattedDate = `${padNumber(
+            currentDate.getDate()
+          )}.${padNumber(
+            currentDate.getMonth() + 1
+          )}.${currentDate.getFullYear()}.`;
+
+          // Display or use the formatted date as needed
+          console.log(formattedDate);
           localStorage.setItem("privacy", true);
+          localStorage.setItem("time", formattedDate);
           console.log("Saved in the Storage");
         } else {
           localStorage.removeItem("privacy");
+          localStorage.removeItem("time");
           console.log("Removed from the Storage");
         }
       });
+
+      // Function to pad a number with leading zero if needed
+      function padNumber(num) {
+        return num.toString().padStart(2, "0");
+      }
     </script>
   </body>
 </html>

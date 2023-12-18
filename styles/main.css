@@ -28,10 +28,10 @@ h3 {
 
 body {
   font-family: "Raleway", "Quicksand", "Avenir Next LT Pro", sans-serif;
-  background: #eee;
+  background: #fff;
   width: 100vw;
   font-size: 16px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 /*  Main menu */
@@ -44,6 +44,7 @@ body {
   padding: 10px 25px;
   background-color: #fff;
   height: 20vh;
+  border-bottom: 1px solid var(--border-color);
 }
 
 /* Top Menu */
@@ -949,6 +950,141 @@ main {
 #newPasswordPage .loginForm .btn {
   display: none;
 }
+
+/* For the internal Menu overlay */
+.internalMenuOverlay {
+  height: max-content;
+  background: #fff;
+  padding: 20px;
+}
+
+.internalMenuOverlay .btn-group {
+  width: 100%;
+  align-items: center;
+  gap: 20px;
+}
+
+.internalMenuOverlay .btn-group .btn:not(.btn-primary) {
+  background: #eee;
+  border: none;
+}
+
+.internalMenuOverlay .btn-group .btn,
+.internalMenuOverlay .btn-group .btn-primary {
+  width: 150px;
+  padding: 10px !important;
+}
+
+.internalMenuOverlay .btn-group .btn:hover {
+  color: #1c1b1b;
+  opacity: 0.7;
+}
+
+.internalMenuOverlay .activeSection {
+  display: block !important;
+}
+
+#overviewSection,
+#personalDataSection,
+#companyDataSection {
+  display: none;
+  transition: all 0.4s ease;
+}
+
+.internalMenuOverlay .internalMenuOverlay--text > p {
+  font-size: 25px;
+  margin: 30px 20px;
+}
+
+.internalMenuOverlay details {
+  margin: 10px 0px;
+}
+
+.internalMenuOverlay details summary {
+  color: var(--primary-color);
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  padding: 10px 0px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.internalMenuOverlay strong {
+  /* color: #000; */
+}
+
+.internalMenuOverlay .personalDataInfo {
+  display: flex;
+}
+
+.internalMenuOverlay .personalDataInfo > div:first-child {
+  width: 70%;
+}
+
+.internalMenuOverlay .personalDataInfo > div:last-child {
+  padding-top: 20px;
+  width: 30%;
+}
+
+.internalMenuOverlay .personalDataInfo > div:last-child img {
+  width: 250px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.internalMenuOverlay .personalDataInfo div > p {
+  padding: 10px;
+  color: #4e4747;
+}
+
+.internalMenuOverlay .personalDataInfo > div:last-child p {
+  padding: 5px;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.internalMenuOverlay .companyDataInfo {
+  color: #4e4747;
+}
+
+.internalMenuOverlay .companyDataInfo .boxes {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+.internalMenuOverlay .companyDataInfo .boxes > div {
+  width: 33.333%;
+  padding: 10px 25px;
+  background: #eee;
+  color: #4e4747;
+  border-radius: 4px;
+}
+
+.internalMenuOverlay .companyDataInfo .boxes .text-large {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.internalMenuOverlay .companyDataInfo .boxes > div > p {
+  padding-top: 15px;
+}
+
+.internalMenuOverlay #personalDataSection .field,
+.internalMenuOverlay #companyDataSection .field {
+  margin-top: 20px;
+}
+
+.internalMenuOverlay .navigation_btns {
+  display: flex;
+  gap: 10px;
+}
+.internalMenuOverlay .navigation_btns button {
+  width: max-content;
+  padding: 10px 15px;
+}
 /* Media query for the tablets; */
 @media screen and (max-width: 990px) {
   .field .emailInfo {
@@ -1033,5 +1169,40 @@ main {
 
   .field label {
     width: max-content;
+  }
+
+  /* For  */
+  .internalMenuOverlay .personalDataInfo > div:last-child img {
+    width: 100%;
+  }
+  .internalMenuOverlay .personalDataInfo {
+    flex-direction: column;
+  }
+  .internalMenuOverlay .personalDataInfo > div:first-child {
+    margin-top: 10px;
+    border-top: 1px solid var(--border-color);
+    width: 100%;
+    order: 2;
+  }
+
+  .internalMenuOverlay .personalDataInfo > div:last-child {
+    width: 100%;
+    order: 1;
+  }
+
+  .internalMenuOverlay .companyDataInfo .boxes {
+    flex-direction: column;
+  }
+
+  .internalMenuOverlay .companyDataInfo .boxes > div {
+    width: 100%;
+  }
+
+  .internalMenuOverlay .navigation_btns {
+    flex-direction: column;
+  }
+
+  .internalMenuOverlay .navigation_btns button {
+    width: 100%;
   }
 }
