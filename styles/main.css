@@ -585,18 +585,6 @@ body {
 }
 
 /* Media Query for screen that has height greater then 700px */
-@media (min-height: 800px) {
-  .main-menu {
-    height: 15vh;
-  }
-
-  .menu-top {
-    padding-top: 15px;
-  }
-  .container {
-    height: 85vh;
-  }
-}
 
 /*  For screens less then 1024px */
 @media (max-width: 1024px) {
@@ -687,6 +675,19 @@ body {
 
   .searchBox {
     width: 80%;
+  }
+}
+
+@media (min-height: 800px) {
+  .main-menu {
+    height: 15vh;
+  }
+
+  .menu-top {
+    padding-top: 15px;
+  }
+  .container {
+    height: 85vh;
   }
 }
 
@@ -1157,6 +1158,101 @@ main {
   justify-content: center;
 }
 
+/* For the accout Management */
+#accountManagement {
+  margin: 20px;
+}
+
+#accountManagement .intro {
+  margin: 20px 0px;
+}
+
+#accountManagement .btn-group {
+  margin: 30px 0px;
+  display: flex;
+  gap: 20px;
+}
+
+#accountManagement .btn-group .btn {
+  padding: 10px 15px;
+}
+
+#accountManagement .mt-5 {
+  margin-top: 100px;
+}
+
+#accountManagement .btn {
+  padding: 10px 15px;
+}
+
+/* For the reset Password */
+
+#resetPassword {
+  margin: 30px 35px;
+}
+
+#resetPassword .intro p {
+  margin: 20px 0px;
+}
+
+#resetPassword .intro p:last-child {
+  width: 60%;
+}
+
+#resetPassword .intro p:nth-child(2) {
+  margin-top: 20px;
+}
+
+#resetPassword .fields {
+  display: flex;
+  width: 50%;
+  gap: 20px;
+}
+
+#resetPassword .break {
+  margin-top: 30px;
+}
+
+#resetPassword label {
+  display: block;
+  color: var(--primary-color);
+}
+
+#resetPassword .form-control {
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 2px;
+}
+
+#resetPassword .star {
+  font-size: 32px;
+}
+
+#resetPassword .btn-group {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+}
+
+#resetPassword .btn-group .btn {
+  padding: 10px 15px;
+}
+
+/* FOr the Delete account */
+.fields > div {
+  width: 100%;
+}
+
+.fields textarea {
+  height: 150px;
+}
+
+.fields #deletePasswordAuth {
+  width: max-content;
+}
+
 /* Media query for the tablets; */
 @media screen and (max-width: 990px) {
   .field .emailInfo {
@@ -1215,7 +1311,7 @@ main {
 }
 
 /* Media query for the mobile */
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 880px) {
   form > div {
     display: block !important;
   }
@@ -1283,6 +1379,48 @@ main {
   }
 
   .loginForm {
+    width: 100%;
+  }
+
+  /* For the account management */
+  #accountManagement {
+    width: 90%;
+    margin: auto;
+  }
+  #accountManagement .btn-group {
+    flex-direction: column;
+  }
+
+  /* For the rest password */
+
+  #resetPassword {
+    width: 90%;
+    margin: auto;
+  }
+  #resetPassword .fields {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #resetPassword .fields .w-50 {
+    width: 100%;
+  }
+
+  #resetPassword .intro p:last-child {
+    width: 100%;
+  }
+
+  .formContainer > div:last-child .btn {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .forget_password .btn {
+    margin-top: 20px;
+  }
+
+  /* For the account delettion */
+  .fields #deletePasswordAuth {
     width: 100%;
   }
 }

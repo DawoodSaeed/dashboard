@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mega Menu 1</title>
+
+    <!-- Font Awesome Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- stylesheet file -->
+    <link rel="stylesheet" href="../styles/main.css" />
+
+    <!-- Script -->
+    <script src="./scripts/main.js" defer></script>
+  </head>
+  <body>
+    <div class="main-menu">
+      <div class="menu-top">
+        <!-- Logo, Title, about us, loations, de , search icon, login Btn -->
+        <div class="menu-top__left">
+          <div class="logoDiv">
+            <!-- <h1>CONSULTING</h1> -->
+            <img src="../images/logo.jpeg" alt="Logo Image" class="logoImage" />
+          </div>
+          <div class="d-none_small_screen ml-2">
+            <p class="pageTwo__title">
+              Interim Management
+              <span class="pageTwo__title-italic">Dashboard</span>
+            </p>
+            <p class="hover-title hover-title__pageTwo">Global</p>
+          </div>
+        </div>
+
+        <div class="menu-top__right">
+          <div class="border-gray dropdown d-none_small_screen">
+            <p class="hover hover_removed">
+              <a>About Us <i class="fa-solid fa-caret-down icon-color"></i></a>
+            </p>
+
+            <div class="dropdown-options about_dropdown close">
+              <p class="hover hover_removed"><a href="">Unternehmen</a></p>
+              <p class="hover hover_removed">
+                <a href="">Ethik und Compilance</a>
+              </p>
+              <p class="hover hover_removed"><a href="">Menschenrechte</a></p>
+              <p class="hover hover_removed">
+                <a href="">Inclusion & Diversity</a>
+              </p>
+            </div>
+          </div>
+          <div class="border-gray d-none_small_screen">
+            <p class="hover hover_removed">
+              <a>Locations </a>
+            </p>
+            <!-- <span>Locations</span> -->
+          </div>
+          <div class="border-gray d-none_small_screen"><span>DE</span></div>
+          <div class="border-gray searchBtn">
+            <span><i class="fa-solid fa-magnifying-glass icon-color"></i></span>
+          </div>
+          <div class="btn-primary dropdown">
+            <span class="fontSize_smallScreen">
+              <i class="fa-solid fa-arrow-right-to-bracket"></i> Registration
+            </span>
+
+            <div class="dropdown-options menutwo_registration_dropdown close">
+              <a>Logout</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Search Bar -->
+
+      <div style="width: 100%; justify-content: center" class="searchRow close">
+        <div class="searchBox">
+          <input type="text" placeholder="Search" class="searchBoxInput" />
+
+          <i class="fa-solid fa-magnifying-glass searchBoxIcon"></i>
+        </div>
+      </div>
+
+      <!-- Small screen navbar toggler -->
+      <div class="menu-bottom_smallScreen mt-2">
+        <i class="fa-solid fa-bars"></i>
+        <div class="ml-1">
+          <p class="small_hover-title">Global</p>
+        </div>
+      </div>
+
+      <div class="menu-bottom">
+        <div class="menu-left">
+          <div class="dropdown">
+            <span class="hover"
+              ><a>Company</a> <i class="fa-solid fa-chevron-down icon-color"></i
+            ></span>
+
+            <div class="dropdown-options close" id="dashboard_opt1">
+              <div class="hover">
+                <a href="">Profile</a>
+              </div>
+              <div class="hover">
+                <a href="">Personal Data</a>
+              </div>
+              <div class="hover">
+                <a href="">Company Data</a>
+              </div>
+            </div>
+          </div>
+          <div class="dropdown">
+            <span class="hover"
+              ><a>Features</a>
+              <i class="fa-solid fa-chevron-down icon-color"></i
+            ></span>
+
+            <div class="dropdown-options close">
+              <div class="hover">
+                <a href="candidatesearh.html">Candidate Search</a>
+              </div>
+              <div class="hover">
+                <a href="candidatesuggestion.html">Candidate Suggestion</a>
+              </div>
+              <div class="hover">
+                <a href="">Manage your account</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="menu-right">
+          <div>
+            <i class="fa-solid fa-user icon-color"></i>
+            <span class="ml-1"><a href="">Contact</a></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" id="accountManagement">
+      <!-- Small Screen Navbar -->
+      <div class="navbar_small_screen">
+        <div class="navbar_small_screen-row">
+          <div class="row justify-space-between">
+            <h2>Accounts</h2>
+            <i
+              class="fa-solid fa-chevron-down icon-color fa-plus_small_navbar"
+            ></i>
+          </div>
+          <div class="mt-1 close">
+            <div class="hover">
+              <a href="">Overview </a>
+            </div>
+            <div class="hover">
+              <a href="">Personal Data & Availability </a>
+            </div>
+            <div class="hover">
+              <a href="">Trainingy </a>
+            </div>
+            <div class="hover">
+              <a href="">Career </a>
+            </div>
+            <div class="hover">
+              <a href="">Professional focus </a>
+            </div>
+            <div class="hover">
+              <a href="">Industry experiences </a>
+            </div>
+            <div class="hover">
+              <a href="">Languages ​​and stays abroad </a>
+            </div>
+            <div class="hover">
+              <a href="">Interests </a>
+            </div>
+            <div class="hover">
+              <a href="">Upload documents </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="navbar_small_screen-row">
+          <a href="#">Jobs</a>
+        </div>
+      </div>
+
+      <div class="intro">
+        <p class="title">Account</p>
+      </div>
+
+      <div>
+        <p>Manage your user account</p>
+
+        <div class="btn-group">
+          <button class="btn">
+            <a href="reset_password.html">Change Password</a>
+          </button>
+          <button class="btn">
+            <a href="reset_loginName.html">Change Login Name</a>
+          </button>
+          <button class="btn"><a href="deleteAccount.html">Delete</a></button>
+        </div>
+      </div>
+
+      <div class="privacySection mt-5">
+        <p class="intro">Privacy Policy</p>
+        <p class="desc">All fields marked with an asterisk are mandatory.</p>
+
+        <div class="privacyDataInfo fields">
+          <div class="field d-flex" style="margin: 20px 0px">
+            <label for="privacyCheckBox" id="privacyCheckboxLabel"></label>
+            <input type="checkbox" name="privacy" id="privacyCheckBox" />
+            <label for="privacy" class="ml-1" id="privacyStatement"
+              >I accept the private policy</label
+            >
+          </div>
+        </div>
+
+        <button class="btn">
+          <a href="dashboard.html">Back</a>
+        </button>
+      </div>
+
+      <!-- <div class="main-content"></div> -->
+      <!-- Overlay -->
+      <!-- <div class="overlay"></div> -->
+
+      <script>
+        const privacyStatement = document.getElementById("privacyStatement");
+        //   helper method for the class toggling
+        const toggleClass = function (elem, className) {
+          if (elem.classList.contains(className)) {
+            elem.classList.remove(className);
+          } else {
+            elem.classList.add(className);
+          }
+        };
+        // For the privacy checkbox;
+        const privacyCheckBoxLabel = document.getElementById(
+          "privacyCheckboxLabel"
+        );
+        const privacyCheckBox = document.getElementById("privacyCheckBox");
+
+        //   check if the checkbox is already checked;
+
+        if (localStorage.getItem("privacy") && localStorage.getItem("time")) {
+          privacyCheckBox.checked = true;
+          privacyStatement.textContent = `You agreed to our privacy policy on ${localStorage.getItem(
+            "time"
+          )}`;
+          toggleClass(privacyCheckBoxLabel, "active");
+          console.log("Privacy already set");
+        }
+
+        // For changing the background of the label
+        privacyCheckBoxLabel.addEventListener("click", function () {
+          toggleClass(this, "active");
+          // Check the state of the checkbox;
+        });
+
+        // TGo detect the chnage in orignal checkbox; and rhe store in it label;
+        privacyCheckBox.addEventListener("change", function () {
+          if (this.checked) {
+            const currentDate = new Date();
+
+            // Format the date as "dd.mm.yyyy"
+            const formattedDate = `${padNumber(
+              currentDate.getDate()
+            )}.${padNumber(
+              currentDate.getMonth() + 1
+            )}.${currentDate.getFullYear()}.`;
+
+            // Display or use the formatted date as needed
+            console.log(formattedDate);
+            localStorage.setItem("privacy", true);
+            localStorage.setItem("time", formattedDate);
+            console.log("Saved in the Storage");
+          } else {
+            localStorage.removeItem("privacy");
+            localStorage.removeItem("time");
+            console.log("Removed from the Storage");
+          }
+        });
+
+        // Function to pad a number with leading zero if needed
+        function padNumber(num) {
+          return num.toString().padStart(2, "0");
+        }
+      </script>
+
+      <script src="./scripts/main.js"></script>
+    </div>
+  </body>
+</html>
