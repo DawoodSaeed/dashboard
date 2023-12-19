@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="../styles/main.css" />
 
     <!-- Script -->
-    <script src="../scripts/main.js" defer></script>
+    <script src="./scripts/main.js" defer></script>
   </head>
   <body>
     <div class="main-menu">
@@ -101,7 +101,7 @@
               ><a>Company</a> <i class="fa-solid fa-chevron-down icon-color"></i
             ></span>
 
-            <div class="dropdown-options close">
+            <div class="dropdown-options close" id="dashboard_opt1">
               <div class="hover">
                 <a href="">Profile</a>
               </div>
@@ -121,10 +121,10 @@
 
             <div class="dropdown-options close">
               <div class="hover">
-                <a href="">Candidate Search</a>
+                <a href="candidatesearh.html">Candidate Search</a>
               </div>
               <div class="hover">
-                <a href="">Candidate Suggestion</a>
+                <a href="candidatesuggestion.html">Candidate Suggestion</a>
               </div>
               <div class="hover">
                 <a href="">Manage your account</a>
@@ -186,7 +186,6 @@
           <a href="#">Jobs</a>
         </div>
       </div>
-
       <div class="internalMenuOverlay">
         <div class="d-flex btn-group">
           <button class="btn btn-primary">Profile</button>
@@ -869,7 +868,39 @@
             activeBtn = idx;
           });
         });
+
+        // For the dashboard
+
+        const dashboardOpt1 = document.querySelectorAll(
+          "#dashboard_opt1 > div"
+        );
+
+        const internalMenuOverlay = document.querySelector(
+          ".internalMenuOverlay"
+        );
+
+        const mainContent = document.querySelector(".main-content");
+        const overlay = document.querySelector(".overlay");
+
+        dashboardOpt1.forEach((option, idx) => {
+          option.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            internalMenuOverlay.classList.remove("d-none");
+            // mainContent.classList.add("d-none");
+            // overlay.classList.add("d-none");
+            btns[activeBtn].classList.remove("btn-primary");
+            sectionActive.classList.remove("activeSection");
+
+            sections[idx].classList.add("activeSection");
+            btns[idx].classList.add("btn-primary");
+            sectionActive = sections[idx];
+            activeBtn = idx;
+          });
+        });
       </script>
+
+      <script src="./scripts/main.js"></script>
     </div>
   </body>
 </html>

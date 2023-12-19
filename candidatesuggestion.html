@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search bar # 1</title>
+    <!-- CDN for remix icon -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Add icon library -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!-- Libk tot the css file -->
+    <link rel="stylesheet" href="styles/candidatesearch.css" />
+
+    <link rel="stylesheet" href="./styles/main.css" />
+
+    <style>
+            .btn-primary {
+              width: max-content;
+              margin-right: 0px;
+            }
+
+            .w-50 {
+              width: calc(50% - 20px);
+            }
+
+            /* Media Query */
+
+      @media (max-width: 600px) {
+          .row {
+              flex-direction: column;
+          }
+
+          .form-control {
+              width: 100%;
+          }
+
+          .input-fields {
+              padding: 25px 20px;
+          }
+
+          .input-fields>div:first-of-type {
+              width: 100%;
+          }
+
+          .d-none {
+              display: none;
+          }
+      }
+
+      /* ########################### CHECKBOX ################## */
+      /* Hide the default checkbox input */
+      .custom-checkbox input[type="checkbox"] {
+          display: none;
+      }
+
+      /* Define the custom checkbox container */
+      .custom-checkbox {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+      }
+
+      /* Style the checkbox */
+      .custom-checkbox .checkmark {
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          background-color: #fff;
+          /* Default background color */
+          border: 1px solid #ccc;
+          margin-right: 10px;
+          cursor: pointer;
+          position: relative;
+      }
+
+      .page2 .checkmark {
+          flex: 0.1;
+      }
+
+      @media (min-width: 1400px) {
+          .page2 .checkmark {
+              flex: 0.07;
+          }
+      }
+
+      /* Change the background color when the checkbox is checked */
+      .custom-checkbox input[type="checkbox"]:checked+.checkmark {
+          background-color: #58a09a;
+          /* Color when checked */
+      }
+
+      /* Style the label text */
+      .custom-checkbox .label-text {
+          vertical-align: middle;
+      }
+
+      .page2 .label-text {
+          flex: 0.9;
+      }
+
+      /* Display the tick mark when the checkbox is checked */
+      .custom-checkbox input[type="checkbox"]:checked+.checkmark::before {
+          content: "\2713";
+          /* Unicode character for a checkmark */
+          display: inline-block;
+          /* Display the tick mark when checked */
+          color: #fff;
+          /* Color of the tick mark when checked */
+          font-size: 16px;
+          /* Adjust the size of the tick mark */
+          position: absolute;
+          top: 45%;
+          left: 45%;
+          transform: translate(-50%, -50%) rotate(15deg);
+          font: inherit;
+      }
+
+      /* ############################ RADIO BUTTONS ###################### */
+
+      /* Style for the custom radio button */
+      .custom-radio {
+          display: inline-block;
+          position: relative;
+          padding-left: 30px;
+          /* Adjust as needed for your design */
+          cursor: pointer;
+      }
+
+      /* Hide the default radio input */
+      .custom-radio input[type="radio"] {
+          display: none;
+      }
+
+      /* Style for the radio mark */
+      .custom-radio .radiomark {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 20px;
+          height: 20px;
+          background-color: #f2f2f2;
+          /* Default background color */
+          border: 1px solid #ccc;
+          border-radius: 50%;
+      }
+
+      /* Change the background color when the radio button is checked */
+      .custom-radio input[type="radio"]:checked+.radiomark {
+          background-color: #58a09a;
+          /* Color when checked */
+      }
+
+
+
+      .job_advertisement {
+          padding: 30px 0vw;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+          cursor: pointer;
+          gap: 30px;
+      }
+
+
+      .job_advertisement>div {
+          width: 30%;
+          min-width: 30%;
+          background-color: var(--bg-color);
+          padding: 50px 30px;
+          flex-grow: 1;
+          transition: all 0.4s ease-in;
+      }
+
+      @media (max-width:600px) {
+          .job_advertisement>div {
+              width: 100%;
+          }
+      }
+
+
+      .job_advertisement>div:hover {
+          transform: scale(1.03);
+      }
+
+
+      .job_advertisement .job_posting-row1 {
+          display: flex;
+          justify-content: space-between;
+      }
+
+
+      .job_posting-row1 p {
+          color: #294245;
+      }
+
+
+      .job_posting-row1 i {
+          font-size: 21px;
+          cursor: pointer;
+          transition: all 0.3s ease'
+
+      }
+
+      /* .job_posting-row1 i:hover {
+          font-weight: 600;
+      } */
+
+      .job_posting-row2 h2 {
+          font-size: 22px;
+          font-weight: 550;
+          margin-top: 25px;
+          color: #314E52;
+      }
+
+
+
+      .job_posting_row {
+          display: flex;
+          gap: 15px;
+          align-items: center;
+          margin-top: 25px;
+      }
+
+
+      .job_posting_row .small_text {
+          font-size: 14px;
+          font-weight: 500;
+          color: #294245;
+      }
+
+      .star_icon {
+          font-size: 25px;
+      }
+
+
+      .ri-star-fill:before {
+        content: "\f186";
+        color: var(--primary);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-menu">
+      <div class="menu-top">
+        <!-- Logo, Title, about us, loations, de , search icon, login Btn -->
+        <div class="menu-top__left">
+          <div class="logoDiv">
+            <!-- <h1>CONSULTING</h1> -->
+            <img src="../images/logo.jpeg" alt="Logo Image" class="logoImage" />
+          </div>
+          <div class="d-none_small_screen ml-2">
+            <p class="pageTwo__title">
+              Interim Management
+              <span class="pageTwo__title-italic">Dashboard</span>
+            </p>
+            <p class="hover-title hover-title__pageTwo">Global</p>
+          </div>
+        </div>
+
+        <div class="menu-top__right">
+          <div class="border-gray dropdown d-none_small_screen">
+            <p class="hover hover_removed">
+              <a>About Us <i class="fa-solid fa-caret-down icon-color"></i></a>
+            </p>
+
+            <div class="dropdown-options about_dropdown close">
+              <p class="hover hover_removed"><a href="">Unternehmen</a></p>
+              <p class="hover hover_removed">
+                <a href="">Ethik und Compilance</a>
+              </p>
+              <p class="hover hover_removed"><a href="">Menschenrechte</a></p>
+              <p class="hover hover_removed">
+                <a href="">Inclusion & Diversity</a>
+              </p>
+            </div>
+          </div>
+          <div class="border-gray d-none_small_screen">
+            <p class="hover hover_removed">
+              <a>Locations </a>
+            </p>
+            <!-- <span>Locations</span> -->
+          </div>
+          <div class="border-gray d-none_small_screen"><span>DE</span></div>
+          <div class="border-gray searchBtn">
+            <span><i class="fa-solid fa-magnifying-glass icon-color"></i></span>
+          </div>
+          <div class="btn-primary dropdown">
+            <span class="fontSize_smallScreen">
+              <i class="fa-solid fa-arrow-right-to-bracket"></i> Registration
+            </span>
+
+            <div class="dropdown-options menutwo_registration_dropdown close">
+              <a>Logout</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Search Bar -->
+
+      <div style="width: 100%; justify-content: center" class="searchRow close">
+        <div class="searchBox">
+          <input type="text" placeholder="Search" class="searchBoxInput" />
+
+          <i class="fa-solid fa-magnifying-glass searchBoxIcon"></i>
+        </div>
+      </div>
+
+      <!-- Small screen navbar toggler -->
+      <div class="menu-bottom_smallScreen mt-2">
+        <i class="fa-solid fa-bars"></i>
+        <div class="ml-1">
+          <p class="small_hover-title">Global</p>
+        </div>
+      </div>
+
+      <div class="menu-bottom">
+        <div class="menu-left">
+          <div class="dropdown">
+            <span class="hover"
+              ><a>Company</a> <i class="fa-solid fa-chevron-down icon-color"></i
+            ></span>
+
+            <div class="dropdown-options close" id="dashboard_opt1">
+              <div class="hover">
+                <a href="">Profile</a>
+              </div>
+              <div class="hover">
+                <a href="">Personal Data</a>
+              </div>
+              <div class="hover">
+                <a href="">Company Data</a>
+              </div>
+            </div>
+          </div>
+          <div class="dropdown">
+            <span class="hover"
+              ><a>Features</a>
+              <i class="fa-solid fa-chevron-down icon-color"></i
+            ></span>
+
+            <div class="dropdown-options close">
+              <div class="hover">
+                <a href="">Candidate Search</a>
+              </div>
+              <div class="hover">
+                <a href="">Candidate Suggestion</a>
+              </div>
+              <div class="hover">
+                <a href="">Manage your account</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="menu-right">
+          <div>
+            <i class="fa-solid fa-user icon-color"></i>
+            <span class="ml-1"><a href="">Contact</a></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <main id="candidateSuggestion">
+      <div class="candidateSuggestionIntro">
+        <p class="title">
+          Interim Management <span class="highlight">Candidate Suggestion</span>
+        </p>
+
+        <p class="bg-primary">Candidate</p>
+      </div>
+
+      <div class="job_advertisement">
+        <div class="job_posting">
+          <a href="candidateInfo.html">
+            <div class="job_posting-row1">
+              <p>REF.: 106285</p>
+            </div>
+
+            <div class="job_posting-row2">
+              <h2>Interim Company Manager</h2>
+            </div>
+            <div class="job_posting-row3 job_posting_row">
+              <svg
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+                class="icon teaser__detail-icon icon--address"
+                width="24"
+                height="24"
+              >
+                <defs>
+                  <symbol
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    id="address"
+                  >
+                    <g fill-rule="evenodd">
+                      <path d="M3 21h18v2H3zM3 1h10v2H3z"></path>
+                      <rect x="5" y="5" width="2" height="2" rx="1"></rect>
+                      <rect x="9" y="5" width="2" height="2" rx="1"></rect>
+                      <rect x="5" y="8" width="2" height="2" rx="1"></rect>
+                      <rect x="9" y="8" width="2" height="2" rx="1"></rect>
+                      <rect x="5" y="11" width="2" height="2" rx="1"></rect>
+                      <rect x="9" y="11" width="2" height="2" rx="1"></rect>
+                      <rect x="5" y="14" width="2" height="2" rx="1"></rect>
+                      <rect x="9" y="14" width="2" height="2" rx="1"></rect>
+                      <rect x="15" y="14" width="4" height="2" rx="1"></rect>
+                      <path
+                        d="m13.9 7.529 7.285 4.378a1 1 0 1 1-1.03 1.714l-7.286-4.378a1 1 0 0 1 1.03-1.714Z"
+                      ></path>
+                      <rect x="2" y="1" width="2" height="22" rx="1"></rect>
+                      <rect x="12" y="1" width="2" height="21.6" rx="1"></rect>
+                      <rect x="20" y="12" width="2" height="11" rx="1"></rect>
+                    </g>
+                  </symbol>
+                </defs>
+                <g fill="#314E52">
+                  <g fill-rule="evenodd">
+                    <path d="M3 21h18v2H3zM3 1h10v2H3z"></path>
+                    <rect x="5" y="5" width="2" height="2" rx="1"></rect>
+                    <rect x="9" y="5" width="2" height="2" rx="1"></rect>
+                    <rect x="5" y="8" width="2" height="2" rx="1"></rect>
+                    <rect x="9" y="8" width="2" height="2" rx="1"></rect>
+                    <rect x="5" y="11" width="2" height="2" rx="1"></rect>
+                    <rect x="9" y="11" width="2" height="2" rx="1"></rect>
+                    <rect x="5" y="14" width="2" height="2" rx="1"></rect>
+                    <rect x="9" y="14" width="2" height="2" rx="1"></rect>
+                    <rect x="15" y="14" width="4" height="2" rx="1"></rect>
+                    <path
+                      d="m13.9 7.529 7.285 4.378a1 1 0 1 1-1.03 1.714l-7.286-4.378a1 1 0 0 1 1.03-1.714Z"
+                    ></path>
+                    <rect x="2" y="1" width="2" height="22" rx="1"></rect>
+                    <rect x="12" y="1" width="2" height="21.6" rx="1"></rect>
+                    <rect x="20" y="12" width="2" height="11" rx="1"></rect>
+                  </g>
+                </g>
+              </svg>
+
+              <small class="small_text">Region Thuringa </small>
+            </div>
+          </a>
+        </div>
+        <div class="job_posting">
+          <div class="job_posting-row1">
+            <p>REF.: 107434</p>
+          </div>
+
+          <div class="job_posting-row2">
+            <h2>Interim Head of Accounting</h2>
+          </div>
+          <div class="job_posting-row3 job_posting_row">
+            <svg
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              class="icon teaser__detail-icon icon--address"
+              width="24"
+              height="24"
+            >
+              <defs>
+                <symbol
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  id="address"
+                >
+                  <g fill-rule="evenodd">
+                    <path d="M3 21h18v2H3zM3 1h10v2H3z"></path>
+                    <rect x="5" y="5" width="2" height="2" rx="1"></rect>
+                    <rect x="9" y="5" width="2" height="2" rx="1"></rect>
+                    <rect x="5" y="8" width="2" height="2" rx="1"></rect>
+                    <rect x="9" y="8" width="2" height="2" rx="1"></rect>
+                    <rect x="5" y="11" width="2" height="2" rx="1"></rect>
+                    <rect x="9" y="11" width="2" height="2" rx="1"></rect>
+                    <rect x="5" y="14" width="2" height="2" rx="1"></rect>
+                    <rect x="9" y="14" width="2" height="2" rx="1"></rect>
+                    <rect x="15" y="14" width="4" height="2" rx="1"></rect>
+                    <path
+                      d="m13.9 7.529 7.285 4.378a1 1 0 1 1-1.03 1.714l-7.286-4.378a1 1 0 0 1 1.03-1.714Z"
+                    ></path>
+                    <rect x="2" y="1" width="2" height="22" rx="1"></rect>
+                    <rect x="12" y="1" width="2" height="21.6" rx="1"></rect>
+                    <rect x="20" y="12" width="2" height="11" rx="1"></rect>
+                  </g>
+                </symbol>
+              </defs>
+              <g fill="#314E52">
+                <g fill-rule="evenodd">
+                  <path d="M3 21h18v2H3zM3 1h10v2H3z"></path>
+                  <rect x="5" y="5" width="2" height="2" rx="1"></rect>
+                  <rect x="9" y="5" width="2" height="2" rx="1"></rect>
+                  <rect x="5" y="8" width="2" height="2" rx="1"></rect>
+                  <rect x="9" y="8" width="2" height="2" rx="1"></rect>
+                  <rect x="5" y="11" width="2" height="2" rx="1"></rect>
+                  <rect x="9" y="11" width="2" height="2" rx="1"></rect>
+                  <rect x="5" y="14" width="2" height="2" rx="1"></rect>
+                  <rect x="9" y="14" width="2" height="2" rx="1"></rect>
+                  <rect x="15" y="14" width="4" height="2" rx="1"></rect>
+                  <path
+                    d="m13.9 7.529 7.285 4.378a1 1 0 1 1-1.03 1.714l-7.286-4.378a1 1 0 0 1 1.03-1.714Z"
+                  ></path>
+                  <rect x="2" y="1" width="2" height="22" rx="1"></rect>
+                  <rect x="12" y="1" width="2" height="21.6" rx="1"></rect>
+                  <rect x="20" y="12" width="2" height="11" rx="1"></rect>
+                </g>
+              </g>
+            </svg>
+
+            <small class="small_text">Region Munich </small>
+          </div>
+        </div>
+        <div class="job_posting">
+          <div class="job_posting-row1">
+            <p>REF.: 103567</p>
+          </div>
+
+          <div class="job_posting-row2">
+            <h2>Interim Account Manager</h2>
+          </div>
+          <div class="job_posting-row3 job_posting_row">
+            <svg
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              class="icon teaser__detail-icon icon--address"
+              width="24"
+              height="24"
+            >
+              <defs>
+                <symbol
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  id="address"
+                >
+                  <g fill-rule="evenodd">
+                    <path d="M3 21h18v2H3zM3 1h10v2H3z"></path>
+                    <rect x="5" y="5" width="2" height="2" rx="1"></rect>
+                    <rect x="9" y="5" width="2" height="2" rx="1"></rect>
+                    <rect x="5" y="8" width="2" height="2" rx="1"></rect>
+                    <rect x="9" y="8" width="2" height="2" rx="1"></rect>
+                    <rect x="5" y="11" width="2" height="2" rx="1"></rect>
+                    <rect x="9" y="11" width="2" height="2" rx="1"></rect>
+                    <rect x="5" y="14" width="2" height="2" rx="1"></rect>
+                    <rect x="9" y="14" width="2" height="2" rx="1"></rect>
+                    <rect x="15" y="14" width="4" height="2" rx="1"></rect>
+                    <path
+                      d="m13.9 7.529 7.285 4.378a1 1 0 1 1-1.03 1.714l-7.286-4.378a1 1 0 0 1 1.03-1.714Z"
+                    ></path>
+                    <rect x="2" y="1" width="2" height="22" rx="1"></rect>
+                    <rect x="12" y="1" width="2" height="21.6" rx="1"></rect>
+                    <rect x="20" y="12" width="2" height="11" rx="1"></rect>
+                  </g>
+                </symbol>
+              </defs>
+              <g fill="#314E52">
+                <g fill-rule="evenodd">
+                  <path d="M3 21h18v2H3zM3 1h10v2H3z"></path>
+                  <rect x="5" y="5" width="2" height="2" rx="1"></rect>
+                  <rect x="9" y="5" width="2" height="2" rx="1"></rect>
+                  <rect x="5" y="8" width="2" height="2" rx="1"></rect>
+                  <rect x="9" y="8" width="2" height="2" rx="1"></rect>
+                  <rect x="5" y="11" width="2" height="2" rx="1"></rect>
+                  <rect x="9" y="11" width="2" height="2" rx="1"></rect>
+                  <rect x="5" y="14" width="2" height="2" rx="1"></rect>
+                  <rect x="9" y="14" width="2" height="2" rx="1"></rect>
+                  <rect x="15" y="14" width="4" height="2" rx="1"></rect>
+                  <path
+                    d="m13.9 7.529 7.285 4.378a1 1 0 1 1-1.03 1.714l-7.286-4.378a1 1 0 0 1 1.03-1.714Z"
+                  ></path>
+                  <rect x="2" y="1" width="2" height="22" rx="1"></rect>
+                  <rect x="12" y="1" width="2" height="21.6" rx="1"></rect>
+                  <rect x="20" y="12" width="2" height="11" rx="1"></rect>
+                </g>
+              </g>
+            </svg>
+
+            <small class="small_text">Region Munich </small>
+          </div>
+        </div>
+
+        <!-- Row Two of job positing  -->
+        <div class="job_posting">
+          <a href="candidateInfo.html">
+            <div class="job_posting-row1">
+              <p>REF.: 104235</p>
+            </div>
+
+            <div class="job_posting-row2">
+              <h2>Interim Graphic designer</h2>
+            </div>
+            <div class="job_posting-row3 job_posting_row">
+              <svg
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+                class="icon teaser__detail-icon icon--address"
+                width="24"
+                height="24"
+              >
+                <defs>
+                  <symbol
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    id="address"
+                  >
+                    <g fill-rule="evenodd">
+                      <path d="M3 21h18v2H3zM3 1h10v2H3z"></path>
+                      <rect x="5" y="5" width="2" height="2" rx="1"></rect>
+                      <rect x="9" y="5" width="2" height="2" rx="1"></rect>
+                      <rect x="5" y="8" width="2" height="2" rx="1"></rect>
+                      <rect x="9" y="8" width="2" height="2" rx="1"></rect>
+                      <rect x="5" y="11" width="2" height="2" rx="1"></rect>
+                      <rect x="9" y="11" width="2" height="2" rx="1"></rect>
+                      <rect x="5" y="14" width="2" height="2" rx="1"></rect>
+                      <rect x="9" y="14" width="2" height="2" rx="1"></rect>
+                      <rect x="15" y="14" width="4" height="2" rx="1"></rect>
+                      <path
+                        d="m13.9 7.529 7.285 4.378a1 1 0 1 1-1.03 1.714l-7.286-4.378a1 1 0 0 1 1.03-1.714Z"
+                      ></path>
+                      <rect x="2" y="1" width="2" height="22" rx="1"></rect>
+                      <rect x="12" y="1" width="2" height="21.6" rx="1"></rect>
+                      <rect x="20" y="12" width="2" height="11" rx="1"></rect>
+                    </g>
+                  </symbol>
+                </defs>
+                <g fill="#314E52">
+                  <g fill-rule="evenodd">
+                    <path d="M3 21h18v2H3zM3 1h10v2H3z"></path>
+                    <rect x="5" y="5" width="2" height="2" rx="1"></rect>
+                    <rect x="9" y="5" width="2" height="2" rx="1"></rect>
+                    <rect x="5" y="8" width="2" height="2" rx="1"></rect>
+                    <rect x="9" y="8" width="2" height="2" rx="1"></rect>
+                    <rect x="5" y="11" width="2" height="2" rx="1"></rect>
+                    <rect x="9" y="11" width="2" height="2" rx="1"></rect>
+                    <rect x="5" y="14" width="2" height="2" rx="1"></rect>
+                    <rect x="9" y="14" width="2" height="2" rx="1"></rect>
+                    <rect x="15" y="14" width="4" height="2" rx="1"></rect>
+                    <path
+                      d="m13.9 7.529 7.285 4.378a1 1 0 1 1-1.03 1.714l-7.286-4.378a1 1 0 0 1 1.03-1.714Z"
+                    ></path>
+                    <rect x="2" y="1" width="2" height="22" rx="1"></rect>
+                    <rect x="12" y="1" width="2" height="21.6" rx="1"></rect>
+                    <rect x="20" y="12" width="2" height="11" rx="1"></rect>
+                  </g>
+                </g>
+              </svg>
+
+              <small class="small_text">Region Freiburg </small>
+            </div>
+          </a>
+        </div>
+        <div class="job_posting">
+          <div class="job_posting-row1">
+            <p>REF.: 194327</p>
+          </div>
+
+          <div class="job_posting-row2">
+            <h2>Interim Head of HR</h2>
+          </div>
+          <div class="job_posting-row3 job_posting_row">
+            <svg
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              class="icon teaser__detail-icon icon--address"
+              width="24"
+              height="24"
+            >
+              <defs>
+                <symbol
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  id="address"
+                >
+                  <g fill-rule="evenodd">
+                    <path d="M3 21h18v2H3zM3 1h10v2H3z"></path>
+                    <rect x="5" y="5" width="2" height="2" rx="1"></rect>
+                    <rect x="9" y="5" width="2" height="2" rx="1"></rect>
+                    <rect x="5" y="8" width="2" height="2" rx="1"></rect>
+                    <rect x="9" y="8" width="2" height="2" rx="1"></rect>
+                    <rect x="5" y="11" width="2" height="2" rx="1"></rect>
+                    <rect x="9" y="11" width="2" height="2" rx="1"></rect>
+                    <rect x="5" y="14" width="2" height="2" rx="1"></rect>
+                    <rect x="9" y="14" width="2" height="2" rx="1"></rect>
+                    <rect x="15" y="14" width="4" height="2" rx="1"></rect>
+                    <path
+                      d="m13.9 7.529 7.285 4.378a1 1 0 1 1-1.03 1.714l-7.286-4.378a1 1 0 0 1 1.03-1.714Z"
+                    ></path>
+                    <rect x="2" y="1" width="2" height="22" rx="1"></rect>
+                    <rect x="12" y="1" width="2" height="21.6" rx="1"></rect>
+                    <rect x="20" y="12" width="2" height="11" rx="1"></rect>
+                  </g>
+                </symbol>
+              </defs>
+              <g fill="#314E52">
+                <g fill-rule="evenodd">
+                  <path d="M3 21h18v2H3zM3 1h10v2H3z"></path>
+                  <rect x="5" y="5" width="2" height="2" rx="1"></rect>
+                  <rect x="9" y="5" width="2" height="2" rx="1"></rect>
+                  <rect x="5" y="8" width="2" height="2" rx="1"></rect>
+                  <rect x="9" y="8" width="2" height="2" rx="1"></rect>
+                  <rect x="5" y="11" width="2" height="2" rx="1"></rect>
+                  <rect x="9" y="11" width="2" height="2" rx="1"></rect>
+                  <rect x="5" y="14" width="2" height="2" rx="1"></rect>
+                  <rect x="9" y="14" width="2" height="2" rx="1"></rect>
+                  <rect x="15" y="14" width="4" height="2" rx="1"></rect>
+                  <path
+                    d="m13.9 7.529 7.285 4.378a1 1 0 1 1-1.03 1.714l-7.286-4.378a1 1 0 0 1 1.03-1.714Z"
+                  ></path>
+                  <rect x="2" y="1" width="2" height="22" rx="1"></rect>
+                  <rect x="12" y="1" width="2" height="21.6" rx="1"></rect>
+                  <rect x="20" y="12" width="2" height="11" rx="1"></rect>
+                </g>
+              </g>
+            </svg>
+
+            <small class="small_text">Region Düsseldorf </small>
+          </div>
+        </div>
+        <div class="job_posting">
+          <div class="job_posting-row1">
+            <p>REF.: 105408</p>
+          </div>
+
+          <div class="job_posting-row2">
+            <h2>Interim Senior Editor</h2>
+          </div>
+          <div class="job_posting-row3 job_posting_row">
+            <svg
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              class="icon teaser__detail-icon icon--address"
+              width="24"
+              height="24"
+            >
+              <defs>
+                <symbol
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  id="address"
+                >
+                  <g fill-rule="evenodd">
+                    <path d="M3 21h18v2H3zM3 1h10v2H3z"></path>
+                    <rect x="5" y="5" width="2" height="2" rx="1"></rect>
+                    <rect x="9" y="5" width="2" height="2" rx="1"></rect>
+                    <rect x="5" y="8" width="2" height="2" rx="1"></rect>
+                    <rect x="9" y="8" width="2" height="2" rx="1"></rect>
+                    <rect x="5" y="11" width="2" height="2" rx="1"></rect>
+                    <rect x="9" y="11" width="2" height="2" rx="1"></rect>
+                    <rect x="5" y="14" width="2" height="2" rx="1"></rect>
+                    <rect x="9" y="14" width="2" height="2" rx="1"></rect>
+                    <rect x="15" y="14" width="4" height="2" rx="1"></rect>
+                    <path
+                      d="m13.9 7.529 7.285 4.378a1 1 0 1 1-1.03 1.714l-7.286-4.378a1 1 0 0 1 1.03-1.714Z"
+                    ></path>
+                    <rect x="2" y="1" width="2" height="22" rx="1"></rect>
+                    <rect x="12" y="1" width="2" height="21.6" rx="1"></rect>
+                    <rect x="20" y="12" width="2" height="11" rx="1"></rect>
+                  </g>
+                </symbol>
+              </defs>
+              <g fill="#314E52">
+                <g fill-rule="evenodd">
+                  <path d="M3 21h18v2H3zM3 1h10v2H3z"></path>
+                  <rect x="5" y="5" width="2" height="2" rx="1"></rect>
+                  <rect x="9" y="5" width="2" height="2" rx="1"></rect>
+                  <rect x="5" y="8" width="2" height="2" rx="1"></rect>
+                  <rect x="9" y="8" width="2" height="2" rx="1"></rect>
+                  <rect x="5" y="11" width="2" height="2" rx="1"></rect>
+                  <rect x="9" y="11" width="2" height="2" rx="1"></rect>
+                  <rect x="5" y="14" width="2" height="2" rx="1"></rect>
+                  <rect x="9" y="14" width="2" height="2" rx="1"></rect>
+                  <rect x="15" y="14" width="4" height="2" rx="1"></rect>
+                  <path
+                    d="m13.9 7.529 7.285 4.378a1 1 0 1 1-1.03 1.714l-7.286-4.378a1 1 0 0 1 1.03-1.714Z"
+                  ></path>
+                  <rect x="2" y="1" width="2" height="22" rx="1"></rect>
+                  <rect x="12" y="1" width="2" height="21.6" rx="1"></rect>
+                  <rect x="20" y="12" width="2" height="11" rx="1"></rect>
+                </g>
+              </g>
+            </svg>
+
+            <small class="small_text">Region Berlin </small>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <button class="btn">More Candidate</button>
+      </div>
+    </main>
+
+    <!--  Custom JS Script -->
+    <script src="scripts/candidatesearch.js"></script>
+    <script src="scripts/main.js"></script>
+  </body>
+</html>

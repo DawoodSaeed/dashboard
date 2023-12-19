@@ -34,6 +34,10 @@ body {
   overflow-x: hidden;
 }
 
+.d-none {
+  display: none;
+}
+
 /*  Main menu */
 .main-menu {
   position: relative;
@@ -1085,6 +1089,74 @@ main {
   width: max-content;
   padding: 10px 15px;
 }
+
+/* Candidate Info Page */
+
+#candidateInfo {
+  margin: 30px;
+}
+.candidateRole {
+  justify-content: space-between;
+  margin: 15px 0px;
+}
+
+.candidateRole .title {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.candidateDesc {
+  margin: 30px 0px;
+}
+
+.candidateDesc h3 {
+  font-size: 18px;
+}
+
+.candidateDesc--description {
+  margin: 20px 0px;
+}
+
+.candidateFooter {
+  height: 100%;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.candidateFooter .btn {
+  padding: 10px 10px;
+}
+
+/* For the candidate suggestion */
+
+#candidateSuggestion .title {
+  font-size: 20px;
+}
+#candidateSuggestion .highlight {
+  color: var(--primary-color);
+}
+
+#candidateSuggestion .bg-primary {
+  background-color: var(--primary-color);
+  padding: 10px;
+  margin: 40px 0px 20px 0px;
+  color: #fff;
+}
+
+#candidateSuggestion .btn-primary {
+  width: calc(max-content + 10px);
+}
+
+#candidateSuggestion .btn {
+  color: #000;
+}
+
+#candidateSuggestion .footer {
+  display: flex;
+  justify-content: center;
+}
+
 /* Media query for the tablets; */
 @media screen and (max-width: 990px) {
   .field .emailInfo {
