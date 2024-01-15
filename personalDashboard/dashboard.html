@@ -279,6 +279,54 @@
         font-size: 22px;
         color: #6e6c6c;
       }
+
+      @media screen and (max-width: 990px){
+        main{
+          padding:10px;
+        }
+
+
+        /* For the personal Details; */
+        #personalDetails .details > div:first-of-type{
+          flex: 0.6;
+        }
+
+        #personalDetails .details > div:nth-child(2){
+          flex: 0.4;
+        }
+
+        /* For the education details */
+        #educationDetails .d-flex{
+          justify-content: space-between;
+        }
+        #educationDetails .w-25{
+          width: 45%;
+          margin-top: 10px;;
+        }
+      }
+
+
+      /* For the mobile screen */
+      @media screen and (max-width: 880px){
+        .btns-menu{
+          flex-direction: row;
+          flex-wrap: wrap;
+        }
+
+
+        /* For the personal data */
+        #personalDetails .details {
+          flex-direction: column;
+        }
+
+        #educationDetails .w-25, #careerDetails .w-33,
+        #professionalFocusDetails .w-33,
+        #industryExperienceDetails .w-50,
+        #languageDetails .w-25
+        {
+          width: 100%;
+        }
+      }
     </style>
   </head>
   <body>
@@ -443,57 +491,348 @@
         <button class="btn">Account</button>
       </div>
 
-      <p class="title mt-3">Profile - Overview</p>
-      <details class="detailsExpansion mt-3" id="personalDetails">
-        <summary>
-          <span>Personal Data</span>
-          <span class="edit-icon">&#9998;</span>
-        </summary>
+      <div class="openner">
+        <p class="title mt-3">Profile - Overview</p>
+        <details class="detailsExpansion mt-3" id="personalDetails">
+          <summary>
+            <span>Personal Data</span>
+            <span class="edit-icon">&#9998;</span>
+          </summary>
 
-        <div class="details">
-          <div>
+          <div class="details">
             <div>
-              <p>Dr.</p>
-              <p>Mr</p>
-              <p>Alexander Reimold-Eisenhuth</p>
-              <p>Nettenbergstraße 29</p>
-              <p>79618 Rheinfelden</p>
-              <p>Germany</p>
+              <div>
+                <p>Dr.</p>
+                <p>Mr</p>
+                <p>Alexander Reimold-Eisenhuth</p>
+                <p>Nettenbergstraße 29</p>
+                <p>79618 Rheinfelden</p>
+                <p>Germany</p>
+              </div>
+
+              <div>
+                <p><strong>Phone:</strong> +49 40 201 397 8</p>
+                <p><strong>Mobil:</strong> +49 (170) 9899770</p>
+                <p><strong>E-Mail I:</strong> a-malt@t-online.de</p>
+                <p>
+                  <strong>E-Mail II:</strong> info@uabzde-12.de
+                  Homepage:www.abzde.de
+                </p>
+              </div>
+
+              <div>
+                <p><strong>Date of birth:</strong> 29.07.1980 (Age:43)</p>
+              </div>
+
+              <div>
+                <p><strong>Email Signature</strong></p>
+              </div>
             </div>
 
             <div>
-              <p><strong>Phone:</strong> +49 40 201 397 8</p>
-              <p><strong>Mobil:</strong> +49 (170) 9899770</p>
-              <p><strong>E-Mail I:</strong> a-malt@t-online.de</p>
-              <p>
-                <strong>E-Mail II:</strong> info@uabzde-12.de
-                Homepage:www.abzde.de
-              </p>
-            </div>
-
-            <div>
-              <p><strong>Date of birth:</strong> 29.07.1980 (Age:43)</p>
-            </div>
-
-            <div>
-              <p><strong>Email Signature</strong></p>
+              <img src="../images/background_image.jpg" alt="" class="w-50" />
+              <p>Change Image</p>
+              <p>Delete Image</p>
+              <p>Privacy Policy</p>
             </div>
           </div>
+        </details>
 
-          <div>
-            <img src="../images/background_image.jpg" alt="" class="w-50" />
-            <p>Change Image</p>
-            <p>Delete Image</p>
-            <p>Privacy Policy</p>
+        <details class="detailsExpansion mt-3">
+          <summary>
+            <span>Availability</span>
+            <span class="edit-icon">&#9998;</span>
+          </summary>
+          <div class="details">
+            <p>12. February 2023</p>
           </div>
-        </div>
-      </details>
+        </details>
+
+        <details class="detailsExpansion mt-3" id="educationDetails">
+          <summary>
+            <span>Education</span>
+            <span class="edit-icon">&#9998;</span>
+          </summary>
+          <div class="details">
+            <h3 class="primary_color">Studies</h3>
+            <div class="d-flex row mt-3">
+              <div class="w-25">
+                <p>Date from – to</p>
+                <p class="text-muted mt-1">01.09.2020 – 30.09.2022</p>
+              </div>
+
+              <div class="w-25">
+                <p>Intitution (name of institution)</p>
+                <p class="text-muted mt-1">University Hamburg</p>
+              </div>
+
+              <div class="w-25">
+                <p>Education</p>
+                <p class="text-muted mt-1">Bachelor of Arts</p>
+              </div>
+
+              <div class="w-25">
+                <p>Spacialization</p>
+                <p class="text-muted mt-1">Oeconomic</p>
+              </div>
+            </div>
+
+            <!-- Row # 2  -->
+            <h3 class="primary_color mt-3">Training</h3>
+            <div class="d-flex row mt-3">
+              <div class="w-25">
+                <p>Date from – to</p>
+                <p class="text-muted mt-1">01.08.2010 – 30.08.2013</p>
+              </div>
+
+              <div class="w-25">
+                <p>Intitution (name of institution)</p>
+                <p class="text-muted mt-1">Hanover Vocational School</p>
+              </div>
+
+              <div class="w-25">
+                <p>Education</p>
+                <p class="text-muted mt-1">State Administrative Officer</p>
+              </div>
+
+              <div class="w-25">
+                <p>Spacialization</p>
+                <p class="text-muted mt-1">Trade</p>
+              </div>
+            </div>
+
+            <!-- Row # 3  -->
+            <h3 class="primary_color mt-3">School education</h3>
+            <div class="d-flex row mt-3">
+              <div class="w-25">
+                <p>Date from – to</p>
+                <p class="text-muted mt-1">01.09.2008 – 30.09.2010</p>
+              </div>
+
+              <div class="w-25">
+                <p>Intitution (name of institution)</p>
+                <p class="text-muted mt-1">Hamburg Comprehensive School</p>
+              </div>
+
+              <div class="w-25">
+                <p>Education</p>
+                <p class="text-muted mt-1">High school graduation</p>
+              </div>
+
+              <div class="w-25">
+                <p>Spacialization</p>
+                <p class="text-muted mt-1">Languages</p>
+              </div>
+            </div>
+
+            <div class="mt-3">
+              <p class="primary_color">Further education</p>
+              <p class="primary_color">Continuing education</p>
+              <p class="primary_color">Seminar</p>
+              <p class="primary_color">Certification</p>
+              <p class="primary_color">Intership</p>
+            </div>
+          </div>
+        </details>
+
+        <details class="detailsExpansion mt-3" id="careerDetails">
+          <summary>
+            <span>Career </span>
+            <span class="edit-icon">&#9998;</span>
+          </summary>
+          <div class="details">
+            <div class="d-flex row mt-3">
+              <div class="w-33">
+                <p>Personnel responsibility (subordinate employees)</p>
+                <p class="text-muted mt-1">up to 100 employees</p>
+              </div>
+
+              <div class="w-33">
+                <p>Personal (HR – Manager)</p>
+                <p class="text-muted mt-1">University Hamburg</p>
+              </div>
+
+              <div class="w-33">
+                <p>Budget responsibility (projects / departments)</p>
+                <p class="text-muted mt-1">up to 10 Mio €</p>
+              </div>
+            </div>
+
+            <!-- Row # 2 -->
+            <div class="d-flex row mt-3">
+              <div class="w-33">
+                <p>Purchasing responsibility</p>
+                <p class="text-muted mt-1">up to 50 Mio €</p>
+              </div>
+
+              <div class="w-33">
+                <p>Revenue Responsibility</p>
+                <p class="text-muted mt-1">up to 10 Mio €</p>
+              </div>
+
+              <div class="w-33">
+                <p>Last year's salary</p>
+                <p class="text-muted mt-1">90.000 – 110.000 €</p>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <details class="detailsExpansion mt-3" id="professionalFocusDetails">
+          <summary>
+            <span>Professional Focus </span>
+            <span class="edit-icon">&#9998;</span>
+          </summary>
+          <div class="details">
+            <div class="d-flex row mt-3">
+              <div class="w-33">
+                <p>Professional focus</p>
+                <p class="text-muted mt-1">Corporate Management / Management</p>
+                <p class="text-muted mt-1">Corporate Management / Management</p>
+                <p class="text-muted mt-1">Corporate Management / Management</p>
+                <p class="text-muted mt-1">Purchase</p>
+              </div>
+
+              <div class="w-33">
+                <p>Areas of responsibility (core competencies)</p>
+                <p class="text-muted mt-1">University Hamburg</p>
+              </div>
+
+              <div class="w-33">
+                <p>Experience level</p>
+                <p class="text-muted mt-1">Expansion of the company</p>
+                <p class="text-muted mt-1">Finances IFRS</p>
+                <p class="text-muted mt-1">Change Management</p>
+                <p class="text-muted mt-1">Purchasing USA</p>
+              </div>
+            </div>
+
+            <!-- Row # 2 -->
+            <div class="d-flex row mt-3">
+              <div class="w-33">
+                <p>Purchasing responsibility</p>
+                <p class="text-muted mt-1">up to 50 Mio €</p>
+              </div>
+
+              <div class="w-33">
+                <p>Revenue Responsibility</p>
+                <p class="text-muted mt-1">up to 10 Mio €</p>
+              </div>
+
+              <div class="w-33">
+                <p>Last year's salary</p>
+                <p class="text-muted mt-1">90.000 – 110.000 €</p>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <details class="detailsExpansion mt-3" id="industryExperienceDetails">
+          <summary>
+            <span>Industry Experience </span>
+            <span class="edit-icon">&#9998;</span>
+          </summary>
+          <div class="details">
+            <div class="d-flex row mt-3">
+              <div class="w-50">
+                <p>Industry</p>
+                <p class="text-muted mt-1">Automotive</p>
+                <p class="text-muted mt-1">Industrial Service</p>
+              </div>
+
+              <div class="w-50">
+                <p>Experience Level</p>
+                <p class="text-muted mt-1">up to 5 years</p>
+                <p class="text-muted mt-1">up to 3 years</p>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <details class="detailsExpansion mt-3" id="languageDetails">
+          <summary>
+            <span>Languages & Abroad </span>
+            <span class="edit-icon">&#9998;</span>
+          </summary>
+
+          <div class="details">
+            <div class="d-flex row mt-3">
+              <div class="w-25">
+                <p>Language</p>
+                <p class="mt-2">Language</p>
+                <p class="text-muted mt-1">English</p>
+                <p class="text-muted mt-1">French</p>
+                <p class="text-muted mt-1">Spain</p>
+              </div>
+
+              <div class="w-25">
+                <p></p>
+                <p class="mt-3">Language Level</p>
+                <p class="text-muted mt-1">Bussiness Fluent</p>
+                <p class="text-muted mt-1">Basic</p>
+                <p class="text-muted mt-1">Advance</p>
+              </div>
+
+              <div class="w-25">
+                <p>Abroad</p>
+                <p class="mt-2">Land</p>
+                <p class="text-muted mt-1">Great Britain</p>
+              </div>
+
+              <div class="w-25">
+                <p></p>
+                <p class="mt-3">Duration</p>
+                <p class="text-muted mt-1">up to 4 years</p>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <details class="detailsExpansion mt-3" id="documentUploadDetails">
+          <summary>
+            <span>Document Upload </span>
+            <span class="edit-icon">&#9998;</span>
+          </summary>
+
+          <div class="details">
+            <p>Executive Summary</p>
+            <p>University Certificate</p>
+          </div>
+        </details>
+
+        <details class="detailsExpansion mt-3" id="privacyDetails">
+          <summary>
+            <span>Privacy</span>
+            <span class="edit-icon">&#9998;</span>
+          </summary>
+          <div class="details">
+            <div class="field d-flex" style="margin: 20px 0px">
+              <label for="privacyCheckBox" id="privacyCheckboxLabel"></label>
+              <input type="checkbox" name="privacy" id="privacyCheckBox" />
+              <label for="privacy" class="ml-1" id="privacyStatement"
+                >I accept the private policy</label
+              >
+            </div>
+          </div>
+        </details>
+
+        <details class="detailsExpansion mt-3" id="accountDetails">
+          <summary>
+            <span>Account</span>
+            <span class="edit-icon">&#9998;</span>
+          </summary>
+
+          <div class="details"></div>
+        </details>
+      </div>
     </main>
 
     <!--  Custom JS Script -->
 
     <script src="../scripts/main.js"></script>
+    <script src="../scripts/common.js"></script>
     <script>
+      setPrivacyStatement();
       function closeAllDropdowns() {
         dropdowns.forEach((dropdown) => {
           const dropdownOptions = dropdown.querySelector(".dropdown-options");
