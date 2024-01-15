@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Excellence Dashboard</title>
+    <!-- CDN for remix icon -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Add icon library -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!-- Libk tot the css file -->
+    <link rel="stylesheet" href="../styles/candidatesearch.css" />
+
+    <link rel="stylesheet" href="../styles/main.css" />
+
+    <style>
+            .btn-primary {
+              width: max-content;
+              margin-right: 0px;
+            }
+
+            .w-50 {
+              width: calc(50% - 20px);
+            }
+
+            /* Media Query */
+
+      @media (max-width: 600px) {
+          .row {
+              flex-direction: column;
+          }
+
+          .form-control {
+              width: 100%;
+          }
+
+          .input-fields {
+              padding: 25px 20px;
+          }
+
+          .input-fields>div:first-of-type {
+              width: 100%;
+          }
+
+          .d-none {
+              display: none;
+          }
+      }
+
+      /* ########################### CHECKBOX ################## */
+      /* Hide the default checkbox input */
+      .custom-checkbox input[type="checkbox"] {
+          display: none;
+      }
+
+      /* Define the custom checkbox container */
+      .custom-checkbox {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+      }
+
+      /* Style the checkbox */
+      .custom-checkbox .checkmark {
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          background-color: #fff;
+          /* Default background color */
+          border: 1px solid #ccc;
+          margin-right: 10px;
+          cursor: pointer;
+          position: relative;
+      }
+
+      .page2 .checkmark {
+          flex: 0.1;
+      }
+
+      @media (min-width: 1400px) {
+          .page2 .checkmark {
+              flex: 0.07;
+          }
+      }
+
+      /* Change the background color when the checkbox is checked */
+      .custom-checkbox input[type="checkbox"]:checked+.checkmark {
+          background-color: #58a09a;
+          /* Color when checked */
+      }
+
+      /* Style the label text */
+      .custom-checkbox .label-text {
+          vertical-align: middle;
+      }
+
+      .page2 .label-text {
+          flex: 0.9;
+      }
+
+      /* Display the tick mark when the checkbox is checked */
+      .custom-checkbox input[type="checkbox"]:checked+.checkmark::before {
+          content: "\2713";
+          /* Unicode character for a checkmark */
+          display: inline-block;
+          /* Display the tick mark when checked */
+          color: #fff;
+          /* Color of the tick mark when checked */
+          font-size: 16px;
+          /* Adjust the size of the tick mark */
+          position: absolute;
+          top: 45%;
+          left: 45%;
+          transform: translate(-50%, -50%) rotate(15deg);
+          font: inherit;
+      }
+
+      /* ############################ RADIO BUTTONS ###################### */
+
+      /* Style for the custom radio button */
+      .custom-radio {
+          display: inline-block;
+          position: relative;
+          padding-left: 30px;
+          /* Adjust as needed for your design */
+          cursor: pointer;
+      }
+
+      /* Hide the default radio input */
+      .custom-radio input[type="radio"] {
+          display: none;
+      }
+
+      /* Style for the radio mark */
+      .custom-radio .radiomark {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 20px;
+          height: 20px;
+          background-color: #f2f2f2;
+          /* Default background color */
+          border: 1px solid #ccc;
+          border-radius: 50%;
+      }
+
+      /* Change the background color when the radio button is checked */
+      .custom-radio input[type="radio"]:checked+.radiomark {
+          background-color: #58a09a;
+          /* Color when checked */
+      }
+
+
+
+      .job_advertisement {
+          padding: 30px 6vw;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+          cursor: pointer;
+          gap: 30px;
+      }
+
+
+      .job_advertisement>div {
+          width: 30%;
+          min-width: 30%;
+          background-color: var(--bg-color);
+          padding: 50px 30px;
+          flex-grow: 1;
+          transition: all 0.4s ease-in;
+      }
+
+      @media (max-width:600px) {
+          .job_advertisement>div {
+              width: 100%;
+          }
+      }
+
+
+      .job_advertisement>div:hover {
+          transform: scale(1.03);
+      }
+
+
+      .job_advertisement .job_posting-row1 {
+          display: flex;
+          justify-content: space-between;
+      }
+
+
+      .job_posting-row1 p {
+          color: #294245;
+      }
+
+
+      .job_posting-row1 i {
+          font-size: 21px;
+          cursor: pointer;
+          transition: all 0.3s ease'
+
+      }
+
+      /* .job_posting-row1 i:hover {
+          font-weight: 600;
+      } */
+
+      .job_posting-row2 h2 {
+          font-size: 22px;
+          font-weight: 550;
+          margin-top: 25px;
+          color: #314E52;
+      }
+
+
+
+      .job_posting_row {
+          display: flex;
+          gap: 15px;
+          align-items: center;
+          margin-top: 25px;
+      }
+
+
+      .job_posting_row .small_text {
+          font-size: 14px;
+          font-weight: 500;
+          color: #294245;
+      }
+
+      .star_icon {
+          font-size: 25px;
+      }
+
+
+      .ri-star-fill:before {
+        content: "\f186";
+        color: var(--primary);
+      }
+
+      /* for the buttons; */
+      .btns-menu{
+        justify-content: center;
+      }
+      .btns-menu .btn{
+        width: max-content !important;
+        color: #000;
+        font-weight: 500;
+        padding: 10px 20px;
+        background: #ddd;
+        border: 0px;
+        text-transform: capitalize;
+      }
+
+      .btns-menu .btn.active{
+        background-color: #58a09a;
+        color: #fff;
+      }
+
+      .title{
+        font-size: 22px;
+        color: #6e6c6c;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-menu">
+      <div class="menu-top">
+        <!-- Logo, Title, about us, loations, de , search icon, login Btn -->
+        <div class="menu-top__left">
+          <div class="logoDiv">
+            <!-- <h1>CONSULTING</h1> -->
+            <img src="../images/logo.jpeg" alt="Logo Image" class="logoImage" />
+          </div>
+          <div class="d-none_small_screen ml-2">
+            <p class="pageTwo__title">
+              Personal Excellence
+              <span class="pageTwo__title-italic">Dashboard</span>
+            </p>
+            <p class="hover-title hover-title__pageTwo" style="opacity: 0">
+              Global
+            </p>
+          </div>
+        </div>
+
+        <div class="menu-top__right">
+          <div class="border-gray dropdown d-none_small_screen">
+            <p class="hover hover_removed">
+              <a>About Us <i class="fa-solid fa-caret-down icon-color"></i></a>
+            </p>
+
+            <div class="dropdown-options about_dropdown close">
+              <p class="hover hover_removed"><a href="">Unternehmen</a></p>
+              <p class="hover hover_removed">
+                <a href="">Ethik und Compilance</a>
+              </p>
+              <p class="hover hover_removed"><a href="">Menschenrechte</a></p>
+              <p class="hover hover_removed">
+                <a href="">Inclusion & Diversity</a>
+              </p>
+            </div>
+          </div>
+          <div class="border-gray d-none_small_screen">
+            <p class="hover hover_removed">
+              <a>Locations </a>
+            </p>
+            <!-- <span>Locations</span> -->
+          </div>
+          <div class="border-gray d-none_small_screen"><span>DE</span></div>
+          <div class="border-gray searchBtn">
+            <span><i class="fa-solid fa-magnifying-glass icon-color"></i></span>
+          </div>
+          <div class="btn-primary dropdown">
+            <span class="fontSize_smallScreen">
+              <i class="fa-solid fa-arrow-right-to-bracket"></i> Registration
+            </span>
+
+            <div class="dropdown-options menutwo_registration_dropdown close">
+              <a>Logout</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Search Bar -->
+
+      <div style="width: 100%; justify-content: center" class="searchRow close">
+        <div class="searchBox">
+          <input type="text" placeholder="Search" class="searchBoxInput" />
+
+          <i class="fa-solid fa-magnifying-glass searchBoxIcon"></i>
+        </div>
+      </div>
+
+      <!-- Small screen navbar toggler -->
+      <div class="menu-bottom_smallScreen mt-2">
+        <i class="fa-solid fa-bars"></i>
+        <div class="ml-1">
+          <p class="small_hover-title">Global</p>
+        </div>
+      </div>
+
+      <div class="menu-bottom">
+        <div class="menu-left">
+          <div class="dropdown">
+            <span class="hover"
+              ><a>My Account</a>
+              <i class="fa-solid fa-chevron-down icon-color"></i
+            ></span>
+
+            <div class="dropdown-options close" id="dashboard_opt1">
+              <div class="hover">
+                <a href="dashboard.html">Profil</a>
+              </div>
+              <div class="hover">
+                <a href="dashboard.html">Personal Data </a>
+              </div>
+              <div class="hover">
+                <a href="dashboard.html">Availability</a>
+              </div>
+              <div class="hover">
+                <a href="dashboard.html">Education</a>
+              </div>
+              <div class="hover">
+                <a href="dashboard.html">Career</a>
+              </div>
+              <div class="hover">
+                <a href="dashboard.html">Professional focus</a>
+              </div>
+              <div class="hover">
+                <a href="dashboard.html">Industry experiences</a>
+              </div>
+              <div class="hover">
+                <a href="dashboard.html">Languages and abroad </a>
+              </div>
+              <div class="hover">
+                <a href="dashboard.html">Upload documents </a>
+              </div>
+              <div class="hover">
+                <a href="dashboard.html">Privacy</a>
+              </div>
+              <div class="hover">
+                <a href="dashboard.html">Account</a>
+              </div>
+            </div>
+          </div>
+          <div class="dropdown">
+            <span class="hover"
+              ><a>Jobs</a> <i class="fa-solid fa-chevron-down icon-color"></i
+            ></span>
+
+            <div class="dropdown-options close">
+              <div class="hover">
+                <a href="#">Jobs Search</a>
+              </div>
+              <div class="hover">
+                <a href="#">Apllication Status</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="menu-right">
+          <div>
+            <i class="fa-solid fa-user icon-color"></i>
+            <span class="ml-1"><a href="">Contact</a></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main class="container">
+      <div
+        class="btns-menu d-flex row justify-content-centera align-items-center"
+      >
+        <button class="btn active">profile</button>
+        <button class="btn">Personal Data</button>
+        <button class="btn">Availability</button>
+        <button class="btn">Education</button>
+        <button class="btn">Career</button>
+        <button class="btn">Professional focus</button>
+        <button class="btn">Industry Experience</button>
+        <button class="btn">Language & Abroad</button>
+        <button class="btn">Document Upload</button>
+        <button class="btn">Privacy</button>
+        <button class="btn">Account</button>
+      </div>
+
+      <p class="title mt-3">Profile - Overview</p>
+      <details class="detailsExpansion mt-3" id="personalDetails">
+        <summary>
+          <span>Personal Data</span>
+          <span class="edit-icon">&#9998;</span>
+        </summary>
+
+        <div class="details">
+          <div>
+            <div>
+              <p>Dr.</p>
+              <p>Mr</p>
+              <p>Alexander Reimold-Eisenhuth</p>
+              <p>Nettenbergstraße 29</p>
+              <p>79618 Rheinfelden</p>
+              <p>Germany</p>
+            </div>
+
+            <div>
+              <p><strong>Phone:</strong> +49 40 201 397 8</p>
+              <p><strong>Mobil:</strong> +49 (170) 9899770</p>
+              <p><strong>E-Mail I:</strong> a-malt@t-online.de</p>
+              <p>
+                <strong>E-Mail II:</strong> info@uabzde-12.de
+                Homepage:www.abzde.de
+              </p>
+            </div>
+
+            <div>
+              <p><strong>Date of birth:</strong> 29.07.1980 (Age:43)</p>
+            </div>
+
+            <div>
+              <p><strong>Email Signature</strong></p>
+            </div>
+          </div>
+
+          <div>
+            <img src="../images/background_image.jpg" alt="" class="w-50" />
+            <p>Change Image</p>
+            <p>Delete Image</p>
+            <p>Privacy Policy</p>
+          </div>
+        </div>
+      </details>
+    </main>
+
+    <!--  Custom JS Script -->
+
+    <script src="../scripts/main.js"></script>
+    <script>
+      function closeAllDropdowns() {
+        dropdowns.forEach((dropdown) => {
+          const dropdownOptions = dropdown.querySelector(".dropdown-options");
+          dropdownOptions.classList.remove("active");
+        });
+      }
+
+      const dropdowns = document.querySelectorAll(".dropdown");
+      dropdowns.forEach((dropdown) => {
+        dropdown.addEventListener(
+          "click",
+          function () {
+            const dropdownOptions = this.querySelector(".dropdown-options");
+            if (dropdownOptions.classList.contains("active")) {
+              dropdownOptions.classList.remove("active");
+            } else {
+              closeAllDropdowns();
+              dropdownOptions.classList.add("active");
+            }
+          },
+          false
+        );
+
+        // Prevent event propagation for child options
+        const dropdownOptions = dropdown.querySelector(".dropdown-options");
+        dropdownOptions.addEventListener("click", function (event) {
+          event.stopPropagation();
+        });
+      });
+
+      document.addEventListener("click", function (event) {
+        if (!event.target.closest(".dropdown")) {
+          closeAllDropdowns();
+        }
+      });
+    </script>
+  </body>
+</html>

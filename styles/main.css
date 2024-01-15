@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
 * {
   padding: 0px;
   margin: 0px;
@@ -27,7 +27,7 @@ h3 {
 }
 
 body {
-  font-family: "Raleway", "Quicksand", "Avenir Next LT Pro", sans-serif;
+  font-family: "Quicksand", "Avenir Next LT Pro", sans-serif;
   background: #fff;
   width: 100vw;
   font-size: 16px;
@@ -270,8 +270,14 @@ body {
   padding: 0px;
 }
 
+.font-bold {
+  font-weight: bold;
+}
 /*  Margin Classes */
 
+.mt-0 {
+  margin-top: 0 !important;
+}
 .mt-1 {
   margin-top: 10px;
 }
@@ -774,6 +780,9 @@ main {
   display: none;
   opacity: 0;
   transition: all 0.4s ease;
+  z-index: 11;
+  height: 400px;
+  overflow-y: scroll;
 }
 
 .field .field_dropdown--menuActive {
@@ -889,9 +898,6 @@ main {
 .form-control:focus {
   outline: none;
   border: 1px solid teal;
-  border-top: none;
-  border-left: none;
-  border-right: none;
 }
 
 .loginForm .error_message {
@@ -1423,4 +1429,67 @@ main {
   .fields #deletePasswordAuth {
     width: 100%;
   }
+}
+
+/* For the details Expansion */
+.detailsExpansion summary {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.detailsExpansion summary {
+  font-size: 22px;
+  color: teal;
+  border-bottom: 1px solid #7c7c7c;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.detailsExpansion summary:hover {
+  opacity: 0.9;
+}
+
+.detailsExpansion .details {
+  padding: 10px 0px;
+}
+
+#personalDetails .details {
+  display: flex;
+  justify-content: space-between;
+}
+
+#personalDetails .details > div:first-of-type {
+  flex: 0.8;
+}
+
+#personalDetails .details div:not(:first-of-type) {
+  margin-top: 30px;
+}
+#personalDetails .details > div:not(:first-of-type) {
+  flex: 0.2;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+#personalDetails .details > div:not(:first-of-type) p {
+  border: 1px solid #ddd;
+  width: 100%;
+  margin-top: 20px;
+  padding: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+
+#personalDetails .details img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
