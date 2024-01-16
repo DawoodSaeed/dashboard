@@ -1563,7 +1563,8 @@ main {
 }
 
 #educationDiv .input_mask .icon,
-#professionalFocusDiv .icon {
+#professionalFocusDiv .icon,
+#industryExperienceDiv .icon {
   background-color: teal;
   color: #fff;
   padding: 10px;
@@ -1594,4 +1595,55 @@ main {
 #professionalFocusDiv .d-flex {
   gap: 20px;
   align-items: center;
+}
+
+#industryExperienceDiv .d-flex {
+  gap: 20px;
+}
+
+#documentUploadDiv .filesUpload > div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 10px 15px;
+  color: #7c7c7c;
+}
+#documentUploadDiv .filesUpload > div p:not(:first-of-type) {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#documentUploadDiv .filesUpload > div:first-of-type {
+  background: teal;
+  color: #eee;
+}
+
+#documentUploadDiv .fileUpload input[type="file"] {
+  display: none;
+}
+
+#documentUploadDiv .fileUpload label {
+  background-color: #c2c0c0;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.dashboardNavBtns {
+  display: flex;
+  gap: 50px;
+  margin: 50px 0px;
+}
+.dashboardNavBtns button {
+  background-color: #cac8c8;
+  padding: 10px 25px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  font: inherit;
+  border: 0px;
+  text-transform: uppercase;
+}
+
+.deleteIcon {
+  width: 20px;
 }

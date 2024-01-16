@@ -284,6 +284,11 @@
         gap: 20px !important;
       }
 
+
+      .container{
+        height: auto !important;
+      }
+
       @media screen and (max-width: 990px){
         main{
           padding:15px;
@@ -328,6 +333,18 @@
 
         #professionalFocusDiv .w-33{
           width: 100%;
+        }
+
+
+        #industryExperienceDiv .d-flex{
+          flex-direction: column;
+        }
+        #industryExperienceDiv .w-50{
+          width: 100% !important;
+        }
+
+        #industryExperienceDiv .icon{
+          width: max-content;
         }
       }
 
@@ -1154,13 +1171,15 @@
                   <label for="Action ">Action </label>
                   <div class="d-flex">
                     <span class="icon">&#9998;</span>
-                    <span class="icon">&#9998;</span>
+                    <span class="icon"
+                      ><img src="../images/trash.png" class="deleteIcon"
+                    /></span>
                   </div>
                 </div>
               </div>
 
               <button class="AddRow">
-                <span>Add anothe field</span> <span>+</span>
+                <span>Add another field</span> <span>+</span>
               </button>
             </div>
           </div>
@@ -1374,7 +1393,9 @@
             <div>
               <label for="Action ">Action </label>
               <div class="d-flex">
-                <span class="icon">&#9998;</span>
+                <span class="icon"
+                  ><img src="../images/trash.png" class="deleteIcon"
+                /></span>
               </div>
             </div>
           </div>
@@ -1382,6 +1403,219 @@
           <button class="AddRow">
             <span>Add another field</span> <span>+</span>
           </button>
+        </div>
+      </div>
+
+      <!-- ############ Industry Experience ######### -->
+      <div class="openner mt-3 d-none" id="industryExperienceDiv">
+        <h2 class="title">Indstry Experience</h2>
+        <p class="text-muted mt-3 font-bold">
+          Alle mit Sternchen gekennzeichnet Felder sind Pflichtfelder
+        </p>
+        <p class="mt-3 text-muted">
+          Geben Sie Ihre Branchenerfahrungen an. Erfassen Sie nur die
+          Branchenerfahrungen in exekutiver, nicht in beratender Funktion und
+          nur solche, die sich mindestens über ein halbes Jahr erstrecken.
+        </p>
+
+        <div class="field m-0">
+          <div class="d-flex clone mt-3">
+            <div class="field_dropdown w-50">
+              <label for="date"><b>Industry</b> </label>
+              <input
+                type="text"
+                class="form-control w-100 salutionInput"
+                placeholder="Please Select"
+                required
+                readonly
+              />
+
+              <div class="field_dropdown--menu" id="industryDropdown"></div>
+
+              <div class="plus">
+                <i class="fa-solid fa-plus"></i>
+              </div>
+            </div>
+
+            <div class="field_dropdown w-50">
+              <label for="date"><b>Experience level</b> </label>
+              <input
+                type="text"
+                class="form-control w-100 salutionInput"
+                placeholder="Please Select"
+                required
+                readonly
+              />
+
+              <div
+                class="field_dropdown--menu"
+                id="experienceNumberLevelDropdown"
+              ></div>
+
+              <div class="plus">
+                <i class="fa-solid fa-plus"></i>
+              </div>
+            </div>
+
+            <div>
+              <label for="Action ">Action </label>
+              <div class="d-flex">
+                <span class="icon"
+                  ><img src="../images/trash.png" class="deleteIcon"
+                /></span>
+              </div>
+            </div>
+          </div>
+
+          <button class="AddRow">
+            <span>Add another field</span> <span>+</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- ############## LANGUAGE ABROAD ########## -->
+      <div class="openner mt-3 d-none" id="industryExperienceDiv">
+        <h2 class="title">Language & Abroad</h2>
+        <p class="text-muted mt-3 font-bold">
+          Specify the language level in each case:
+        </p>
+
+        <div class="field m-0">
+          <div class="d-flex clone mt-3">
+            <div class="field_dropdown w-50">
+              <label for="date"><b>Language</b> </label>
+              <input
+                type="text"
+                class="form-control w-100 salutionInput"
+                placeholder="Please Select"
+                required
+                readonly
+              />
+
+              <div class="field_dropdown--menu" id="languageDropdown"></div>
+
+              <div class="plus">
+                <i class="fa-solid fa-plus"></i>
+              </div>
+            </div>
+
+            <div class="field_dropdown w-50">
+              <label for="date"><b>Language level</b> </label>
+              <input
+                type="text"
+                class="form-control w-100 salutionInput"
+                placeholder="Please Select"
+                required
+                readonly
+              />
+
+              <div
+                class="field_dropdown--menu"
+                id="languageLevelDropdown"
+              ></div>
+
+              <div class="plus">
+                <i class="fa-solid fa-plus"></i>
+              </div>
+            </div>
+          </div>
+
+          <button class="AddRow">
+            <span>Add another field</span> <span>+</span>
+          </button>
+        </div>
+
+        <p class="mt-3">Indicate your work experience abroad</p>
+
+        <div class="field m-0">
+          <div class="d-flex clone mt-3">
+            <div class="field_dropdown w-50">
+              <label for="date"><b>Land</b> </label>
+              <input
+                type="text"
+                class="form-control w-100 salutionInput"
+                placeholder="Please Select"
+                required
+                readonly
+              />
+
+              <div class="field_dropdown--menu" id="landDropdownLangage"></div>
+
+              <div class="plus">
+                <i class="fa-solid fa-plus"></i>
+              </div>
+            </div>
+
+            <div class="field_dropdown w-50">
+              <label for="date"><b>Duration</b> </label>
+              <input
+                type="text"
+                class="form-control w-100 salutionInput"
+                placeholder="Please Select"
+                required
+                readonly
+              />
+
+              <div
+                class="field_dropdown--menu"
+                id="languageDurationDropdown"
+              ></div>
+
+              <div class="plus">
+                <i class="fa-solid fa-plus"></i>
+              </div>
+            </div>
+          </div>
+
+          <button class="AddRow">
+            <span>Add another field</span> <span>+</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- ############## Document Upload ############ -->
+      <div class="openner mt-3 d-none" id="documentUploadDiv">
+        <h2 class="title">Document Upload</h2>
+        <p class="text-muted mt-3">
+          Here you have the possibility to upload up to six documents (CV,
+          project list, references, etc.) to the server. Only files in pdf, jpg,
+          jpeg, doc, png, docx format and a maximum file size of 10 MB are
+          accepted.
+        </p>
+
+        <p class="mt-3">The following files have been uploaded</p>
+
+        <div class="filesUpload mt-3">
+          <div>
+            <p>Files</p>
+            <p>File Size</p>
+            <p>Delete</p>
+          </div>
+
+          <!-- For the files info -->
+          <div>
+            <p>Executive Summary</p>
+            <p>160,30 KB</p>
+            <p><img src="../images/trash.png" class="deleteIcon" /></p>
+          </div>
+
+          <div>
+            <p>University Testimony</p>
+            <p>70,28 KB</p>
+            <p><img src="../images/trash.png" class="deleteIcon" /></p>
+          </div>
+        </div>
+
+        <div class="fileUpload mt-3">
+          <input type="file" />
+          <label>Download File</label>
+        </div>
+
+        <p class="mt-3">After the upload, the registration is complete.</p>
+
+        <div class="dashboardNavBtns">
+          <button>Back</button>
+          <button>Save</button>
         </div>
       </div>
     </main>
@@ -1576,6 +1810,94 @@
 
       setDropdownData(professionalFocusDropdown, professionalFocusArr);
       setDropdownData(experienceLevelDropdown, experienceLevelArr);
+
+      // Dropdown for the industry experience
+      const industryDropdown = document.getElementById("industryDropdown");
+      const experienceNumberLevelDropdown = document.getElementById(
+        "experienceNumberLevelDropdown"
+      );
+      const industryArr = [
+        ["Automotive"],
+        ["Aviation"],
+        ["Banken und Finanzdienstleister"],
+        ["Building & Constructions"],
+        ["Chemicals"],
+        ["Consumer Electronics & High Tech"],
+        ["Consumer Goods"],
+        ["Energie & Versorgungswirtschaft"],
+        ["Health Care"],
+        ["Industrial Services"],
+        ["Industrial Goods & Machine Industry"],
+        ["Insurance"],
+        ["Life Science"],
+        ["Logistik"],
+        ["Media"],
+        ["Medical Devices & Technology"],
+        ["Metals & Mining"],
+        ["Oil & Gas"],
+        ["Paper & Packaging"],
+        ["Public Sector"],
+        ["Rail"],
+        ["Retail"],
+        ["Telecommunication"],
+        ["Travel"],
+      ];
+
+      const experienceNumberLevel = [
+        ["up to 1 year"],
+        ["up to 2 years"],
+        ["up to 3 years"],
+        ["up to 5 years"],
+        ["up to 7 years"],
+        ["up to 10 years"],
+        ["up to 12 years"],
+        ["more than 12 years"],
+      ];
+
+      setDropdownData(industryDropdown, industryArr);
+      setDropdownData(experienceNumberLevelDropdown, experienceNumberLevel);
+
+      // Language dropdown ################
+      setLanguage(document.getElementById("languageDropdown"));
+      const languagLevelArr = [
+        ["Basic"],
+        ["Colloquial"],
+        ["Advanced"],
+        ["Business fluent"],
+        ["Mother tongue"],
+      ];
+      const languageLevelDropdown = document.getElementById(
+        "languageLevelDropdown"
+      );
+
+      setDropdownData(languageLevelDropdown, languagLevelArr);
+      setCountries(document.getElementById("landDropdownLangage"));
+
+      const languageDurationArr = [
+        ["Up to 1 year"],
+        ["Up to 2 year"],
+        ["Up to 3 year"],
+        ["Up to 4 year"],
+        ["Up to 5 year"],
+        ["More then 5 years"],
+      ];
+
+      const languageDurationDropdown = document.getElementById(
+        "languageDurationDropdown"
+      );
+
+      setDropdownData(languageDurationDropdown, languageDurationArr);
+
+      // ############## FOR THE DOCUMENT UPLOAD ########
+      const documentUploadDiv = document.querySelector(
+        "#documentUploadDiv .fileUpload"
+      );
+      const documentUploadDivInp = documentUploadDiv.querySelector("input");
+      const documentUploadDivLabel = documentUploadDiv.querySelector("label");
+
+      documentUploadDivLabel.addEventListener("click", function () {
+        documentUploadDivInp.click();
+      });
 
       // ######################## Openner toggling;
       const openners = document.querySelectorAll(".openner");
