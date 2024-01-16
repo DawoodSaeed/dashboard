@@ -286,7 +286,7 @@
 
       @media screen and (max-width: 990px){
         main{
-          padding:10px;
+          padding:15px;
         }
 
 
@@ -306,6 +306,28 @@
         #educationDetails .w-25{
           width: 45%;
           margin-top: 10px;;
+        }
+
+        /* avaliliblityDiv */
+        #avaliliblityDiv .w-33{
+          width: 45%;
+        }
+        #educationDiv .w-16{
+          width: 100% !important;
+        }
+
+        #educationDiv .input_mask .d-flex{
+          flex-wrap: wrap;
+        }
+
+
+        #professionalFocusDiv .d-flex{
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        #professionalFocusDiv .w-33{
+          width: 100%;
         }
       }
 
@@ -329,6 +351,21 @@
         #languageDetails .w-25
         {
           width: 100%;
+        }
+
+        #avaliliblityDiv .w-33{
+          width: 100%;
+        }
+
+        #educationDiv .menu{
+          display: flex;
+          flex-wrap: wrap;
+          width: 100%;
+          gap: 10px;
+        }
+
+        #educationDiv > .d-flex{
+            flex-direction: column;
         }
       }
     </style>
@@ -495,7 +532,8 @@
         <button class="btn">Account</button>
       </div>
 
-      <div class="openner d-none">
+      <!-- Personal Data; -->
+      <div class="openner">
         <p class="title mt-3">Profile - Overview</p>
         <details class="detailsExpansion mt-3" id="personalDetails">
           <summary>
@@ -830,7 +868,8 @@
         </details>
       </div>
 
-      <div class="openner">
+      <!-- Profile; -->
+      <div class="openner d-none">
         <div class="field">
           <form>
             <div class="d-flex row">
@@ -994,6 +1033,357 @@
           <button class="btn">Save</button>
         </div>
       </div>
+
+      <!-- Availiblity; -->
+      <div class="openner d-none" id="avaliliblityDiv">
+        <h3 class="title mt-3">Availiability</h3>
+
+        <div class="field">
+          <div class="d-flex row">
+            <div class="field_dropdown w-33">
+              <label for="date ">Availiabile from - DAY</label>
+              <input
+                type="text"
+                class="form-control w-100 salutionInput"
+                placeholder="Please Select"
+                required
+                readonly
+              />
+
+              <div class="field_dropdown--menu" id="dateAvailiblity"></div>
+
+              <div class="plus">
+                <i class="fa-solid fa-plus"></i>
+              </div>
+            </div>
+
+            <div class="field_dropdown w-33">
+              <label for="date ">Available from - MONTH </label>
+              <input
+                type="text"
+                class="form-control w-100 salutionInput"
+                placeholder="Please Select"
+                required
+                readonly
+              />
+
+              <div class="field_dropdown--menu" id="monthAvailiblity"></div>
+
+              <div class="plus">
+                <i class="fa-solid fa-plus"></i>
+              </div>
+            </div>
+
+            <div class="field_dropdown w-33">
+              <label for="date ">Availiabile from - DAY</label>
+              <input
+                type="text"
+                class="form-control w-100 salutionInput"
+                placeholder="Please Select"
+                required
+                readonly
+              />
+
+              <div class="field_dropdown--menu" id="yearAvailiblity"></div>
+
+              <div class="plus">
+                <i class="fa-solid fa-plus"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education #################### -->
+      <div class="openner mt-3 d-none" id="educationDiv">
+        <h2 class="title">Education & Training</h2>
+        <p class="text-muted mt-3">Add a education to your cv.</p>
+        <div class="d-flex">
+          <div class="menu">
+            <p class="active">Studies</p>
+            <p>Training</p>
+            <p>School education</p>
+            <p>Further education</p>
+            <p>Continuing education</p>
+            <p>Seminar</p>
+            <p>Certification</p>
+            <p>Internship</p>
+          </div>
+
+          <div class="input_mask">
+            <div class="field m-0">
+              <div class="d-flex clone mt-3">
+                <div class="field_dropdown w-16">
+                  <label for="date">Availiabile from</label>
+                  <input
+                    type="date"
+                    class="form-control w-100"
+                    placeholder="Please Select"
+                    required
+                  />
+                </div>
+
+                <div class="field_dropdown w-16">
+                  <label for="date ">Available To </label>
+                  <input
+                    type="date"
+                    class="form-control w-100"
+                    placeholder="Please Select"
+                    required
+                  />
+                </div>
+
+                <div class="w-16">
+                  <label for="salution "
+                    >institution (name of the institution)
+                  </label>
+                  <input type="text" class="form-control w-100" />
+                </div>
+
+                <div class="w-16">
+                  <label for="salution ">Education </label>
+                  <input type="text" class="form-control w-100" />
+                </div>
+
+                <div class="w-16">
+                  <label for="salution ">Specialization </label>
+                  <input type="text" class="form-control w-100" />
+                </div>
+
+                <div class="w-16">
+                  <label for="Action ">Action </label>
+                  <div class="d-flex">
+                    <span class="icon">&#9998;</span>
+                    <span class="icon">&#9998;</span>
+                  </div>
+                </div>
+              </div>
+
+              <button class="AddRow">
+                <span>Add anothe field</span> <span>+</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Career ############# -->
+      <div class="openner mt-3 d-none" id="careerDiv">
+        <h2 class="title">Career</h2>
+        <p class="text-muted mt-3">
+          Please indicate your maximum level of responsibility in each case:
+        </p>
+        <div class="field">
+          <!-- Row # 1 -->
+          <div class="d-flex row">
+            <div class="field_dropdown w-50">
+              <label for="date"
+                ><b>Personnel responsibility (subordinate employees)</b>
+              </label>
+              <input
+                type="text"
+                class="form-control w-100 salutionInput"
+                placeholder="Please Select"
+                required
+                readonly
+              />
+
+              <div
+                class="field_dropdown--menu"
+                id="personalResponsiblityDropdown"
+              ></div>
+
+              <div class="plus">
+                <i class="fa-solid fa-plus"></i>
+              </div>
+            </div>
+
+            <div class="field_dropdown w-50">
+              <label for="date "><b>Revenue Responsibility</b> </label>
+              <input
+                type="text"
+                class="form-control w-100 salutionInput"
+                placeholder="Please Select"
+                required
+                readonly
+              />
+
+              <div
+                class="field_dropdown--menu"
+                id="revenueResponsiblityDropdown"
+              ></div>
+
+              <div class="plus">
+                <i class="fa-solid fa-plus"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row # 2 -->
+          <div class="d-flex row mt-3">
+            <div class="field_dropdown w-50">
+              <label for="date"><b>Personal (HR – Manager) </b> </label>
+              <input
+                type="text"
+                class="form-control w-100 salutionInput"
+                placeholder="Please Select"
+                required
+                readonly
+              />
+
+              <div
+                class="field_dropdown--menu"
+                id="personalHRManagerDropdown"
+              ></div>
+
+              <div class="plus">
+                <i class="fa-solid fa-plus"></i>
+              </div>
+            </div>
+
+            <div class="field_dropdown w-50">
+              <label for="date "><b>last year's Salary</b></label>
+              <input
+                type="text"
+                class="form-control w-100 salutionInput"
+                placeholder="Please Select"
+                required
+                readonly
+              />
+
+              <div
+                class="field_dropdown--menu"
+                id="lastYearSalaryDropdown"
+              ></div>
+
+              <div class="plus">
+                <i class="fa-solid fa-plus"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row # 3 -->
+          <div class="d-flex row mt-3">
+            <div class="field_dropdown w-50">
+              <label for="date"><b>Purchasing responsibility </b> </label>
+              <input
+                type="text"
+                class="form-control w-100 salutionInput"
+                placeholder="Please Select"
+                required
+                readonly
+              />
+
+              <div
+                class="field_dropdown--menu"
+                id="purchasingResponsibilityDropdown"
+              ></div>
+
+              <div class="plus">
+                <i class="fa-solid fa-plus"></i>
+              </div>
+            </div>
+
+            <div class="field_dropdown w-50">
+              <label for="date "
+                ><b>Budget responsibility (projects / departments)</b></label
+              >
+              <input
+                type="text"
+                class="form-control w-100 salutionInput"
+                placeholder="Please Select"
+                required
+                readonly
+              />
+
+              <div
+                class="field_dropdown--menu"
+                id="budgetResponsiblityDropdown"
+              ></div>
+
+              <div class="plus">
+                <i class="fa-solid fa-plus"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ############ Professional focus ######### -->
+      <div class="openner mt-3 d-none" id="professionalFocusDiv">
+        <h2 class="title">Professional Focus</h2>
+        <p class="text-muted mt-3 font-bold">
+          PLEASE INDICATE YOUR SPECIFIC KNOWLEDGE AND ASSIGN THE APPROPRIATE
+          LEVEL OF EXPERIENCE:
+        </p>
+
+        <div class="field m-0">
+          <div class="d-flex clone mt-3">
+            <div class="field_dropdown w-33">
+              <label for="date"><b>Professional focus</b> </label>
+              <input
+                type="text"
+                class="form-control w-100 salutionInput"
+                placeholder="Please Select"
+                required
+                readonly
+              />
+
+              <div
+                class="field_dropdown--menu"
+                id="professionalFocusDropdown"
+              ></div>
+
+              <div class="plus">
+                <i class="fa-solid fa-plus"></i>
+              </div>
+            </div>
+
+            <div class="w-33">
+              <label for="date "
+                ><b>Areas of responsibility (core competencies)</b>
+              </label>
+              <input
+                type="text"
+                class="form-control w-100"
+                placeholder="Please Select"
+                required
+              />
+            </div>
+
+            <div class="field_dropdown w-33">
+              <label for="date"><b>Experience level</b> </label>
+              <input
+                type="text"
+                class="form-control w-100 salutionInput"
+                placeholder="Please Select"
+                required
+                readonly
+              />
+
+              <div
+                class="field_dropdown--menu"
+                id="experienceLevelDropdown"
+              ></div>
+
+              <div class="plus">
+                <i class="fa-solid fa-plus"></i>
+              </div>
+            </div>
+
+            <div>
+              <label for="Action ">Action </label>
+              <div class="d-flex">
+                <span class="icon">&#9998;</span>
+              </div>
+            </div>
+          </div>
+
+          <button class="AddRow">
+            <span>Add another field</span> <span>+</span>
+          </button>
+        </div>
+      </div>
     </main>
 
     <!--  Custom JS Script -->
@@ -1040,6 +1430,170 @@
       setPrivacyStatement();
       dropDownFunc();
       setCountries();
+
+      // ################## For the date avaliliblity dropdowns ###############;
+      const dateAvailiblity = document.querySelector("#dateAvailiblity");
+      const monthAvailiblity = document.querySelector("#monthAvailiblity");
+      const dateAvailiblityArr = [
+        [1, 2, 3, 4, 5, 6, 7],
+        [8, 9, 10, 11, 12, 13, 14],
+        [15, 16, 17, 18, 19, 20, 21],
+        [22, 23, 24, 25, 26, 27, 28],
+        [29, 30, 31],
+      ];
+
+      const monthAvailiblityArr = [
+        ["January", "February", "March"],
+        ["April", "May", "June"],
+        ["July", "August", "September"],
+        ["October", "November", "December"],
+      ];
+
+      const yearAvailiblityArr = [
+        ["2023", "2024", "2025"],
+        ["2026", "2027", "2028"],
+        ["2029", "2030", "2031"],
+        ["2032", "2033", "2034"],
+      ];
+
+      setDropdownData(dateAvailiblity, dateAvailiblityArr);
+      setDropdownData(monthAvailiblity, monthAvailiblityArr);
+      setDropdownData(yearAvailiblity, yearAvailiblityArr);
+
+      // Add a row button to the education;
+      const addBtns = document.querySelectorAll(".AddRow");
+      addBtns.forEach((btn) => {
+        addRow(btn);
+      });
+
+      // For the education menu toggling;
+      const menu = document.querySelector("#educationDiv  .menu");
+      const ps = menu.querySelectorAll("p");
+      let prev = ps[0];
+      ps.forEach((itm) => {
+        itm.addEventListener("click", function () {
+          prev.classList.remove("active");
+          itm.classList.toggle("active");
+          prev = itm;
+        });
+      });
+
+      // dropdowns for the career
+      const personalResponsiblityDropdown = document.getElementById(
+        "personalResponsiblityDropdown"
+      );
+
+      const revenueResponsiblityDropdown = document.getElementById(
+        "revenueResponsiblityDropdown"
+      );
+
+      const personalHRManagerDropdown = document.getElementById(
+        "personalHRManagerDropdown"
+      );
+
+      const lastYearSalaryDropdown = document.getElementById(
+        "lastYearSalaryDropdown"
+      );
+
+      const purchasingResponsibilityDropdown = document.getElementById(
+        "purchasingResponsibilityDropdown"
+      );
+
+      const budgetResponsiblityDropdown = document.getElementById(
+        "budgetResponsiblityDropdown"
+      );
+      const personalResponsiblityArr = [
+        ["for more than 1000 employee"],
+        ["Up to 1000 employees"],
+        ["Up to 500 employees"],
+        ["Up to 100 employees"],
+        ["Up to 50 employees"],
+        ["Up to 10 employees"],
+      ];
+
+      const revenueResponsiblityData = [
+        ["for more than 1 Mrd €"],
+        ["Up to 1 Mrd €"],
+        ["up to 500 Mio €"],
+        ["up to 100 Mio €"],
+        ["up to 50 Mio €"],
+        ["up to 10 Mio €"],
+      ];
+
+      const lastYearSalaryArr = [
+        ["200.000 – 250.000 €"],
+        ["180.000 – 200.000 €"],
+        ["150.000 – 180.000€"],
+        ["130.000 -150.000 €"],
+        ["110.000- 130.000 €"],
+        ["90.000 – 110.000 €"],
+        ["70.000- 90.000 €"],
+        ["50.000- 70.000 €"],
+        ["50.000 €"],
+      ];
+      setDropdownData(personalResponsiblityDropdown, personalResponsiblityArr);
+      setDropdownData(revenueResponsiblityDropdown, revenueResponsiblityData);
+      setDropdownData(personalHRManagerDropdown, personalResponsiblityArr);
+      setDropdownData(lastYearSalaryDropdown, lastYearSalaryArr);
+      setDropdownData(
+        purchasingResponsibilityDropdown,
+        revenueResponsiblityData
+      );
+      setDropdownData(budgetResponsiblityDropdown, revenueResponsiblityData);
+
+      // Professional Focus Dropdowns
+      const professionalFocusDropdown = document.getElementById(
+        "professionalFocusDropdown"
+      );
+
+      const professionalFocusArr = [
+        ["Corporate Management / Management"],
+        ["Administration"],
+        ["Purchase"],
+        ["Finance & Accounting"],
+        ["Research & Development / Design"],
+        ["Human Resources"],
+        ["IT / EDP"],
+        ["Marketing"],
+        ["PR / Corporate Communication"],
+        ["Production"],
+        ["Quality"],
+        ["Right"],
+        ["Sales & Distribution"],
+        ["Transport & Logistics"],
+        ["Other"],
+      ];
+
+      const experienceLevelDropdown = document.getElementById(
+        "experienceLevelDropdown"
+      );
+
+      const experienceLevelArr = [
+        ["Basic knowledge"],
+        ["Extensive experience"],
+        ["Expert"],
+      ];
+
+      setDropdownData(professionalFocusDropdown, professionalFocusArr);
+      setDropdownData(experienceLevelDropdown, experienceLevelArr);
+
+      // ######################## Openner toggling;
+      const openners = document.querySelectorAll(".openner");
+      const btnsMenuBtns = document.querySelectorAll(".btns-menu button");
+
+      let prevActiveBtn = btnsMenuBtns[0],
+        prevOpenner = openners[0];
+      btnsMenuBtns.forEach((btn, idx) => {
+        btn.addEventListener("click", function () {
+          prevActiveBtn.classList.remove("active");
+          prevOpenner.classList.add("d-none");
+          btn.classList.toggle("active");
+          prevActiveBtn = btn;
+          let opennerActive = openners[idx];
+          opennerActive.classList.remove("d-none");
+          prevOpenner = opennerActive;
+        });
+      });
     </script>
   </body>
 </html>

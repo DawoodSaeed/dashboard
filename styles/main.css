@@ -275,6 +275,9 @@ body {
 }
 /*  Margin Classes */
 
+.m-0 {
+  margin: 0px !important;
+}
 .mt-0 {
   margin-top: 0 !important;
 }
@@ -348,8 +351,16 @@ body {
   align-items: center;
 }
 
+.justify-content-center {
+  justify-content: center;
+}
 .justify-space-between {
   justify-content: space-between;
+}
+.grid-container {
+  display: grid;
+
+  gap: 10px; /* Adjust the gap as needed */
 }
 
 .d-inline {
@@ -372,6 +383,13 @@ body {
   width: 50vw;
 }
 
+.w-20 {
+  width: 20%;
+}
+
+.w-16 {
+  width: 16.6666666667;
+}
 .w-100 {
   width: 100%;
 }
@@ -1513,4 +1531,67 @@ main {
 
 .text-muted {
   color: #7c7c7c;
+}
+
+/* For the education div on the personal excellence dashboard */
+#educationDiv .d-flex {
+  gap: 50px;
+}
+#educationDiv .menu {
+  width: 15%;
+}
+#educationDiv .menu p {
+  background-color: #cac8c8;
+  padding: 10px 20px;
+  border-radius: 3px;
+  margin-top: 10px;
+  text-align: center !important;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  display: flex;
+  justify-content: center;
+}
+
+#educationDiv .menu p:hover,
+#educationDiv .menu p.active {
+  background-color: teal;
+  color: #fff;
+}
+
+#educationDiv .input_mask {
+  flex-grow: 1;
+}
+
+#educationDiv .input_mask .icon,
+#professionalFocusDiv .icon {
+  background-color: teal;
+  color: #fff;
+  padding: 10px;
+  border-radius: 1px;
+  cursor: pointer;
+}
+
+#educationDiv .input_mask .d-flex {
+  align-items: center;
+}
+
+.AddRow {
+  display: flex;
+  padding: 10px;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  margin-top: 20px;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.AddRow span:nth-child(2) {
+  margin-left: 20px;
+  font-weight: 600;
+}
+
+#professionalFocusDiv .d-flex {
+  gap: 20px;
+  align-items: center;
 }

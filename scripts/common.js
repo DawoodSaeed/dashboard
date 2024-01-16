@@ -118,3 +118,32 @@ function dropDownFunc() {
   attachEvent(pluses);
   console.log("Dropdown Attached");
 }
+
+function setDropdownData(dropdownMenuList, data) {
+  data.forEach((itm, idx) => {
+    const row = document.createElement("div");
+    row.classList.add("grid-container");
+    row.style = ``;
+    itm.forEach((itm2, idx2) => {
+      const p = document.createElement("p");
+      p.textContent = itm2;
+      row.appendChild(p);
+      row.style = `grid-template-columns: repeat(${data[0].length}, 1fr);`;
+    });
+    dropdownMenuList.appendChild(row);
+  });
+}
+
+function addRow(addBtn) {
+  addBtn.addEventListener("click", function () {
+    // Find the parent Node;
+    const parentNode = addBtn.parentElement;
+    // clone node that has to be copied;
+    const clonedRow = parentNode.querySelector(".clone").cloneNode(true);
+
+    // Append the clone Node in the parent element;
+    parentNode.appendChild(clonedRow);
+
+    parentNode.appendChild(addBtn);
+  });
+}
