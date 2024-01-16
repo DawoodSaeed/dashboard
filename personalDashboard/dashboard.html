@@ -280,6 +280,10 @@
         color: #6e6c6c;
       }
 
+      .field .row{
+        gap: 20px !important;
+      }
+
       @media screen and (max-width: 990px){
         main{
           padding:10px;
@@ -491,7 +495,7 @@
         <button class="btn">Account</button>
       </div>
 
-      <div class="openner">
+      <div class="openner d-none">
         <p class="title mt-3">Profile - Overview</p>
         <details class="detailsExpansion mt-3" id="personalDetails">
           <summary>
@@ -825,6 +829,171 @@
           <div class="details"></div>
         </details>
       </div>
+
+      <div class="openner">
+        <div class="field">
+          <form>
+            <div class="d-flex row">
+              <div class="field_dropdown w-50">
+                <label for="salution "
+                  >Salution <span class="requiredField">*</span></label
+                >
+                <input
+                  type="text"
+                  class="form-control w-100 salutionInput"
+                  placeholder="Please Select"
+                  required
+                  readonly
+                />
+
+                <div class="field_dropdown--menu">
+                  <p>Mrs</p>
+                  <p>Mr</p>
+                  <p>Diverse</p>
+                </div>
+
+                <div class="plus">
+                  <i class="fa-solid fa-plus"></i>
+                </div>
+              </div>
+              <div class="w-50">
+                <label for="salution "
+                  >Title
+                  <span class="requiredField" style="opacity: 0">*</span></label
+                >
+                <input type="text" class="form-control w-100" />
+              </div>
+            </div>
+
+            <div class="d-flex row mt-1">
+              <div class="w-50">
+                <label for="firstName "
+                  >First Name <span class="requiredField">*</span></label
+                >
+                <input type="text" class="form-control w-100" required />
+              </div>
+
+              <div class="w-50">
+                <label for="sureName "
+                  >Surname <span class="requiredField">*</span></label
+                >
+                <input type="text" class="form-control w-100" required />
+              </div>
+            </div>
+
+            <div class="d-flex row mt-1 emailDiv">
+              <div class="w-50">
+                <label for="firstName "
+                  >Date <span class="requiredField">*</span></label
+                >
+                <input type="date" class="form-control w-100" required />
+              </div>
+
+              <div class="w-50"></div>
+            </div>
+
+            <!-- Street and zip code; -->
+
+            <div class="d-flex row mt-1">
+              <div class="w-50">
+                <label for="street "
+                  >Street <span class="requiredField">*</span></label
+                >
+                <input type="text" class="form-control w-100" required />
+              </div>
+
+              <div class="w-50">
+                <label for="zipcode "
+                  >Zip Code <span class="requiredField">*</span></label
+                >
+                <input type="text" class="form-control w-100" required />
+              </div>
+            </div>
+
+            <div class="d-flex row mt-1">
+              <div class="w-50">
+                <label for="place"
+                  >Place <span class="requiredField">*</span></label
+                >
+                <input type="text" class="form-control w-100" />
+              </div>
+
+              <div class="field_dropdown w-50">
+                <label for="land "
+                  >Land <span class="requiredField">*</span></label
+                >
+                <input
+                  type="text"
+                  class="form-control w-100 salutionInput"
+                  placeholder="Please Select"
+                  required
+                  readonly
+                />
+
+                <div class="field_dropdown--menu countries">
+                  <p>Germany</p>
+                  <p>Asutria</p>
+                  <p>Swizerland</p>
+                </div>
+
+                <div class="plus">
+                  <i class="fa-solid fa-plus"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex row mt-1 emailDiv">
+              <div class="w-50">
+                <label for="firstName "
+                  >Email <span class="requiredField">*</span></label
+                >
+                <input type="email" class="form-control w-100" required />
+              </div>
+
+              <div class="w-50">
+                <label for="firstName "
+                  >Email 2<span class="requiredField">*</span></label
+                >
+                <input type="email" class="form-control w-100" required />
+              </div>
+            </div>
+
+            <!-- Row -->
+            <div class="d-flex row mt-1">
+              <div class="w-50">
+                <label for="teleNo">Telephone Number </label>
+                <input type="text" class="form-control w-100" />
+              </div>
+
+              <div class="w-50">
+                <label for="mobNo">Mobile Number </label>
+                <input type="text" class="form-control w-100" />
+              </div>
+            </div>
+
+            <div class="d-flex row mt-1 emailDiv">
+              <div class="w-50">
+                <label for="homepage ">Homepage </label>
+                <input type="text" class="form-control w-100" />
+              </div>
+
+              <div class="w-50"></div>
+            </div>
+
+            <div class="d-flex row mt-1">
+              <div class="w-100">
+                <label for="homepage ">Email Signature </label>
+                <textarea class="form-control" style="width: 100%"> </textarea>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="navigation_btns">
+          <button class="btn back">Back</button>
+          <button class="btn">Save</button>
+        </div>
+      </div>
     </main>
 
     <!--  Custom JS Script -->
@@ -832,7 +1001,6 @@
     <script src="../scripts/main.js"></script>
     <script src="../scripts/common.js"></script>
     <script>
-      setPrivacyStatement();
       function closeAllDropdowns() {
         dropdowns.forEach((dropdown) => {
           const dropdownOptions = dropdown.querySelector(".dropdown-options");
@@ -868,6 +1036,10 @@
           closeAllDropdowns();
         }
       });
+
+      setPrivacyStatement();
+      dropDownFunc();
+      setCountries();
     </script>
   </body>
 </html>

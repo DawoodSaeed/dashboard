@@ -764,10 +764,14 @@ main {
   border-bottom: 1px solid rgb(158, 158, 158);
   font: inherit;
   transition: all 0.4s ease;
+  border-radius: 0px !important;
 }
 
 .field .form-control:focus {
   outline: none;
+  border-top: 0px !important;
+  border-left: 0px !important;
+  border-right: 0px !important;
 }
 
 .field .field_dropdown {
@@ -784,7 +788,7 @@ main {
   opacity: 0;
   transition: all 0.4s ease;
   z-index: 11;
-  height: 400px;
+  height: 300px;
   overflow-y: scroll;
 }
 
@@ -1089,6 +1093,10 @@ main {
 .internalMenuOverlay #personalDataSection .field,
 .internalMenuOverlay #companyDataSection .field {
   margin-top: 20px;
+}
+
+.navigation_btns button {
+  color: #000 !important;
 }
 
 .internalMenuOverlay .navigation_btns {

@@ -16,6 +16,16 @@ function getCountries(lang = "en") {
   return countries;
 }
 
+function setCountries() {
+  const countriesDiv = document.querySelector(".countries");
+  countriesDiv.innerHTML = ``;
+  for (const [key, value] of Object.entries(getCountries())) {
+    const p = document.createElement("p");
+    p.textContent = value;
+    countriesDiv.appendChild(p);
+  }
+}
+
 // Set the privacy statement
 function setPrivacyStatement() {
   const privacyStatement = document.getElementById("privacyStatement");
@@ -74,4 +84,37 @@ function setPrivacyStatement() {
   function padNumber(num) {
     return num.toString().padStart(2, "0");
   }
+}
+
+function dropDownFunc() {
+  const dropdownMenus = document.querySelectorAll(".field_dropdown--menu");
+  const pluses = document.querySelectorAll(".plus");
+  // Main field;
+  const salutionInputs = document.querySelectorAll(".salutionInput");
+  console.log(salutionInputs);
+
+  const attachEvent = function (element) {
+    element.forEach((salutionInput, idx) => {
+      salutionInput.addEventListener("click", function () {
+        pluses[idx].style.color = `#58a09a`;
+        dropdownMenus[idx].classList.add("field_dropdown--menuActive");
+        const dropdownMenuList = dropdownMenus[idx].querySelectorAll("p");
+        console.log(dropdownMenuList);
+        dropdownMenuList.forEach((itm) => {
+          itm.addEventListener("click", function () {
+            console.log(this);
+            salutionInputs[idx].value = this.textContent;
+            //   After clicking close the dropdownmenu
+            dropdownMenus[idx].classList.remove("field_dropdown--menuActive");
+
+            pluses[idx].style.color = `gray`;
+          });
+        });
+      });
+    });
+  };
+
+  attachEvent(salutionInputs);
+  attachEvent(pluses);
+  console.log("Dropdown Attached");
 }
