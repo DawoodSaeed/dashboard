@@ -1653,6 +1653,55 @@
           <button class="btn">Save</button>
         </div>
       </div>
+
+      <div class="openner mt-3 d-none" id="privacyDiv">
+        <h2 class="title">Privacy policy</h2>
+
+        <p class="text-muted mt-3">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum
+          dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+          commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+          velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+          occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+          mollit anim id est laborum
+        </p>
+
+        <p class="text-muted mt-1">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum
+        </p>
+
+        <p class="text-muted mt-1">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum
+        </p>
+
+        <div class="field d-flex" style="margin: 20px 0px">
+          <label for="privacyCheckBox" id="privacyCheckboxLabel"></label>
+          <input type="checkbox" name="privacy" id="privacyCheckBox" />
+          <label for="privacy" class="ml-1" id="privacyStatement"
+            >I accept the private policy</label
+          >
+        </div>
+      </div>
     </main>
 
     <!--  Custom JS Script -->
@@ -1928,6 +1977,10 @@
         documentUploadDivInp.click();
       });
 
+      // for the privacy ##########
+      const privacyDiv = document.querySelector("#privacyDiv");
+      setPrivacyStatement(privacyDiv);
+
       // Add a row button to the education;
       const addBtns = document.querySelectorAll(".AddRow");
       addBtns.forEach((btn) => {
@@ -1937,7 +1990,6 @@
       // ######################## Openner toggling;
       const openners = document.querySelectorAll(".openner");
       const btnsMenuBtns = document.querySelectorAll(".btns-menu button");
-
       let prevActiveBtn = btnsMenuBtns[0],
         prevOpenner = openners[0];
       btnsMenuBtns.forEach((btn, idx) => {

@@ -32,8 +32,19 @@ function setCountries(elem) {
 }
 
 // Set the privacy statement
-function setPrivacyStatement() {
-  const privacyStatement = document.getElementById("privacyStatement");
+function setPrivacyStatement(elem) {
+  let privacyStatement, privacyCheckBoxLabel, privacyCheckBox;
+  if (elem) {
+    privacyStatement = elem.querySelector("#privacyStatement");
+    // For the privacy checkbox;
+    privacyCheckBoxLabel = elem.querySelector("#privacyCheckboxLabel");
+    privacyCheckBox = elem.querySelector("#privacyCheckBox");
+  } else {
+    privacyStatement = document.getElementById("privacyStatement");
+    // For the privacy checkbox;
+    privacyCheckBoxLabel = document.getElementById("privacyCheckboxLabel");
+    privacyCheckBox = document.getElementById("privacyCheckBox");
+  }
   //   helper method for the class toggling
   const toggleClass = function (elem, className) {
     if (elem.classList.contains(className)) {
@@ -42,9 +53,6 @@ function setPrivacyStatement() {
       elem.classList.add(className);
     }
   };
-  // For the privacy checkbox;
-  const privacyCheckBoxLabel = document.getElementById("privacyCheckboxLabel");
-  const privacyCheckBox = document.getElementById("privacyCheckBox");
 
   //   check if the checkbox is already checked;
 
@@ -103,10 +111,8 @@ function dropDownFunc() {
         pluses[idx].style.color = `#58a09a`;
         dropdownMenus[idx].classList.add("field_dropdown--menuActive");
         const dropdownMenuList = dropdownMenus[idx].querySelectorAll("p");
-        console.log(dropdownMenuList);
         dropdownMenuList.forEach((itm) => {
           itm.addEventListener("click", function () {
-            console.log(this);
             salutionInputs[idx].value = this.textContent;
             //   After clicking close the dropdownmenu
             dropdownMenus[idx].classList.remove("field_dropdown--menuActive");
@@ -150,9 +156,7 @@ function addRow(addBtn) {
     parentNode.appendChild(clonedRow);
 
     parentNode.appendChild(addBtn);
-    setTimeout(() => {
-      dropDownFunc();
-    }, 2000);
+    dropDownFunc();
   });
 }
 
