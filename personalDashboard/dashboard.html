@@ -1186,7 +1186,8 @@
               </div>
 
               <button class="AddRow">
-                <span>Add another field</span> <span>+</span>
+                <span>Add another field</span>
+                <span><i class="ri-add-line"></i></span>
               </button>
             </div>
 
@@ -1416,7 +1417,8 @@
           </div>
 
           <button class="AddRow">
-            <span>Add another field</span> <span>+</span>
+            <span>Add another field</span>
+            <span><i class="ri-add-line"></i></span>
           </button>
         </div>
 
@@ -1486,7 +1488,8 @@
           </div>
 
           <button class="AddRow">
-            <span>Add another field</span> <span>+</span>
+            <span>Add another field</span>
+            <span><i class="ri-add-line"></i></span>
           </button>
         </div>
 
@@ -1544,7 +1547,8 @@
           </div>
 
           <button class="AddRow">
-            <span>Add another field</span> <span>+</span>
+            <span>Add another field</span>
+            <span><i class="ri-add-line"></i></span>
           </button>
         </div>
 
@@ -1591,7 +1595,8 @@
           </div>
 
           <button class="AddRow">
-            <span>Add another field</span> <span>+</span>
+            <span>Add another field</span>
+            <span><i class="ri-add-line"></i></span>
           </button>
         </div>
 
@@ -1724,12 +1729,6 @@
       setDropdownData(monthAvailiblity, monthAvailiblityArr);
       setDropdownData(yearAvailiblity, yearAvailiblityArr);
 
-      // Add a row button to the education;
-      const addBtns = document.querySelectorAll(".AddRow");
-      addBtns.forEach((btn) => {
-        addRow(btn);
-      });
-
       // For the education menu toggling;
       const menu = document.querySelector("#educationDiv  .menu");
       const ps = menu.querySelectorAll("p");
@@ -1806,8 +1805,8 @@
       setDropdownData(budgetResponsiblityDropdown, revenueResponsiblityData);
 
       // Professional Focus Dropdowns
-      const professionalFocusDropdown = document.getElementById(
-        "professionalFocusDropdown"
+      const professionalFocusDropdown = document.querySelectorAll(
+        "#professionalFocusDropdown"
       );
 
       const professionalFocusArr = [
@@ -1828,8 +1827,8 @@
         ["Other"],
       ];
 
-      const experienceLevelDropdown = document.getElementById(
-        "experienceLevelDropdown"
+      const experienceLevelDropdown = document.querySelectorAll(
+        "#experienceLevelDropdown"
       );
 
       const experienceLevelArr = [
@@ -1838,8 +1837,8 @@
         ["Expert"],
       ];
 
-      setDropdownData(professionalFocusDropdown, professionalFocusArr);
-      setDropdownData(experienceLevelDropdown, experienceLevelArr);
+      setMultipleDropdownData(professionalFocusDropdown, professionalFocusArr);
+      setMultipleDropdownData(experienceLevelDropdown, experienceLevelArr);
 
       // Dropdown for the industry experience
       const industryDropdown = document.getElementById("industryDropdown");
@@ -1927,6 +1926,12 @@
 
       documentUploadDivLabel.addEventListener("click", function () {
         documentUploadDivInp.click();
+      });
+
+      // Add a row button to the education;
+      const addBtns = document.querySelectorAll(".AddRow");
+      addBtns.forEach((btn) => {
+        addRow(btn);
       });
 
       // ######################## Openner toggling;

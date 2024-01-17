@@ -96,7 +96,6 @@ function dropDownFunc() {
   const pluses = document.querySelectorAll(".plus");
   // Main field;
   const salutionInputs = document.querySelectorAll(".salutionInput");
-  console.log(salutionInputs);
 
   const attachEvent = function (element) {
     element.forEach((salutionInput, idx) => {
@@ -121,7 +120,6 @@ function dropDownFunc() {
 
   attachEvent(salutionInputs);
   attachEvent(pluses);
-  console.log("Dropdown Attached");
 }
 
 // Set the data for the dropdown;
@@ -152,6 +150,9 @@ function addRow(addBtn) {
     parentNode.appendChild(clonedRow);
 
     parentNode.appendChild(addBtn);
+    setTimeout(() => {
+      dropDownFunc();
+    }, 2000);
   });
 }
 
@@ -314,9 +315,14 @@ function languages() {
 // Set the langages in the dropdown;
 function setLanguage(elem) {
   for (let language of languages()) {
-    console.log(language);
     const p = document.createElement("p");
     p.textContent = language.name;
     elem.appendChild(p);
   }
+}
+
+function setMultipleDropdownData(dropdowns, dropdownArr) {
+  dropdowns.forEach((dropdown) => {
+    setDropdownData(dropdown, dropdownArr);
+  });
 }
